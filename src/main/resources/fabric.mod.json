@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "antishadowpatch",
+  "version": "${version}",
+
+  "name": "Anti Shadow Patch",
+  "description": "Reintroduces the bugs that Mojang patched",
+  "authors": [
+    "ForwarD NerN"
+  ],
+  "contact": {
+    "sources": "https://github.com/ForwarD-NerN/AntiShadowPatch"
+  },
+  "license": "MIT",
+  "icon": "assets/antishadowpatch/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "ru.nern.antishadowpatch.AntiShadowPatch"
+    ]
+  },
+  "mixins": [
+    "antishadowpatch.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.14.6",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

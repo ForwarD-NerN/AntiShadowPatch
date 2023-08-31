@@ -1,0 +1,21 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "ru.nern.antishadowpatch.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "AbstractFurnaceBlockMixin",
+    "block_updates.RedstoneWireBlockMixin",
+    "block_updates.ShulkerBoxBlockMixin",
+    "block_updates.WorldMixin",
+    "dragon.EnderDragonEntityMixin",
+    "floating_components.ComparatorBlockMixin",
+    "floating_components.RedstoneWireBlockMixin",
+    "floating_components.RepeaterBlockMixin",
+    "item_shadowing.ScreenHandlerMixin_117",
+    "item_shadowing.ScreenHandlerMixin_118"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
