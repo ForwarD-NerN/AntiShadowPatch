@@ -2,12 +2,12 @@
 
 ## Info
 
-Recently Mojang started to shadow-patch a lot of technical bugs that many technicals players liked.
+Recently Mojang started to shadow patch a lot of technical bugs that many technical players liked.
 **AntiShadowPatch** is a mod that aims to reimplement them.
 
 You can configure every setting individually in antishadowpatch_config.json
 
-## List of unfixed bugs
+## List of features
 * [StackOverflow update suppression](https://www.youtube.com/watch?v=Dtke-Co5HFM) **1.19+**
 * [CCE update suppression](https://www.youtube.com/watch?v=f4ty-PZcvrI) **22w35a(1.20.2)+**
 * [Item Shadowing 1.17](https://www.youtube.com/watch?v=oz2u7YMPjF4) **1.18+**
