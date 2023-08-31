@@ -2,10 +2,9 @@
 
 ## Info
 
-Recently Mojang started to shadow patch a lot of technical bugs that many technical players liked.
+Recently Mojang started to shadow patch a lot of bugs that many technical players liked.
 **AntiShadowPatch** is a mod that aims to reimplement them.
 
-You can configure every setting individually in antishadowpatch_config.json
 
 ## List of features
 * [StackOverflow update suppression](https://www.youtube.com/watch?v=Dtke-Co5HFM) **1.19+**
@@ -16,6 +15,8 @@ You can configure every setting individually in antishadowpatch_config.json
 * Floating redstone components on top of trapdoors **22w35a(1.20.2)+**
 * [Trapdoor update skipping](https://www.youtube.com/watch?v=hZEOyZ3CEXY) **1.20-pre2+**
 * [Old Dragon Freezing](https://www.youtube.com/watch?v=kxHpyV95rB0) **1.20-pre1+**
+
+You can configure every setting individually in antishadowpatch_config.json
 
 ## But Carpet Fixes does the same!
 Yes, Carpet Fixes also reintroduces most of the bugs, but I thought it would be a good idea 
