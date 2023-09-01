@@ -18,12 +18,3 @@ Recently Mojang started to shadow patch a lot of bugs that many technical player
 
 You can configure every setting individually in antishadowpatch_config.json
 
-## But Carpet Fixes does the same!
-Yes, Carpet Fixes also reintroduces most of the bugs, but I thought it would be a good idea 
-to make a separate mod for shadow patches only. That way, it can be updated 
-faster, and new features will also be added faster.
-
-However, things that weren't in vanilla(like update suppression crash fix) would not be added to the mod.
-
-
-
