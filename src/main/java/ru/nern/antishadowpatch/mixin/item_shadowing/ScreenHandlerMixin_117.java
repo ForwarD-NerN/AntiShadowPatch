@@ -1,30 +1,21 @@
 package ru.nern.antishadowpatch.mixin.item_shadowing;
 
 import com.llamalad7.mixinextras.injector.WrapWithCondition;
-import me.fallenbreath.conditionalmixin.api.annotation.Condition;
-import me.fallenbreath.conditionalmixin.api.annotation.Restriction;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.ScreenHandler;
-import net.minecraft.screen.slot.Slot;
 import net.minecraft.screen.slot.SlotActionType;
-import net.minecraft.util.collection.DefaultedList;
-import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import ru.nern.antishadowpatch.AntiShadowPatch;
 
-@Restriction(
-        require = {
-                @Condition(value = "minecraft", versionPredicates = ">=1.18"),
-        }
-)
+
 @Mixin(ScreenHandler.class)
 public abstract class ScreenHandlerMixin_117 {
+
 
     //Brings back 1.17 item shadowing
     @WrapWithCondition(

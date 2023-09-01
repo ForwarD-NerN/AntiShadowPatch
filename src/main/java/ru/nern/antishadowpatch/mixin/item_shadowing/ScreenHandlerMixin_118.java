@@ -1,10 +1,7 @@
 package ru.nern.antishadowpatch.mixin.item_shadowing;
 
 import com.llamalad7.mixinextras.injector.WrapWithCondition;
-import me.fallenbreath.conditionalmixin.api.annotation.Condition;
-import me.fallenbreath.conditionalmixin.api.annotation.Restriction;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
@@ -18,11 +15,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import ru.nern.antishadowpatch.AntiShadowPatch;
 
-@Restriction(
-        require = {
-                @Condition(value = "minecraft", versionPredicates = ">=1.19"),
-        }
-)
+
 @Mixin(ScreenHandler.class)
 public abstract class ScreenHandlerMixin_118 {
 

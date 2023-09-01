@@ -1,8 +1,6 @@
 package ru.nern.antishadowpatch.mixin.floating_components;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
-import me.fallenbreath.conditionalmixin.api.annotation.Condition;
-import me.fallenbreath.conditionalmixin.api.annotation.Restriction;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.RepeaterBlock;
 import net.minecraft.util.math.BlockPos;
@@ -12,11 +10,6 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import ru.nern.antishadowpatch.AntiShadowPatch;
 
-@Restriction(
-        require = {
-                @Condition(value = "minecraft", versionPredicates = {">=23w35a", ">=1.20.2"}),
-        }
-)
 @Mixin(RepeaterBlock.class)
 public class RepeaterBlockMixin {
     //Brings back floating repeater

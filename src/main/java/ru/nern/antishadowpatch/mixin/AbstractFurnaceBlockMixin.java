@@ -1,8 +1,6 @@
 package ru.nern.antishadowpatch.mixin;
 
 import com.llamalad7.mixinextras.injector.WrapWithCondition;
-import me.fallenbreath.conditionalmixin.api.annotation.Condition;
-import me.fallenbreath.conditionalmixin.api.annotation.Restriction;
 import net.minecraft.block.AbstractFurnaceBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.BlockWithEntity;
@@ -12,11 +10,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import ru.nern.antishadowpatch.AntiShadowPatch;
 
-@Restriction(
-        require = {
-                @Condition(value = "minecraft", versionPredicates = {">=23w35a", ">=1.20.2"}),
-        }
-)
+
 @Mixin(AbstractFurnaceBlock.class)
 public class AbstractFurnaceBlockMixin {
 

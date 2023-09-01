@@ -1,7 +1,5 @@
 package ru.nern.antishadowpatch.mixin.dragon;
 
-import me.fallenbreath.conditionalmixin.api.annotation.Condition;
-import me.fallenbreath.conditionalmixin.api.annotation.Restriction;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.boss.dragon.EnderDragonEntity;
 import net.minecraft.entity.boss.dragon.EnderDragonFight;
@@ -15,11 +13,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import ru.nern.antishadowpatch.AntiShadowPatch;
 
-@Restriction(
-        require = {
-                @Condition(value = "minecraft", versionPredicates = {">=1.20-pre1", ">=1.20"}),
-        }
-)
+
 @Mixin(EnderDragonEntity.class)
 public class EnderDragonEntityMixin {
 
