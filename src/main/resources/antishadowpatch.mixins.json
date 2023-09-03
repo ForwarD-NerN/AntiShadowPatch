@@ -5,6 +5,7 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "AbstractFurnaceBlockMixin",
+    "RegionFileMixin",
     "block_updates.RedstoneWireBlockMixin",
     "block_updates.ShulkerBoxBlockMixin",
     "block_updates.WorldMixin",

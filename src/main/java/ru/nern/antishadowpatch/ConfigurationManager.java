@@ -76,6 +76,7 @@ public class ConfigurationManager
         public boolean bringBackFloatingRedstoneComponentsOnTopOfTrapdoor = true;
         public boolean bringBackTrapdoorUpdateSkipping = true;
         public boolean bringBackOldDragonFreezing = true;
+        public boolean bringBackChunkSaveState = false;
 
     }
 }
