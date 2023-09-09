@@ -15,6 +15,6 @@ Recently Mojang started to shadow patch a lot of bugs that many technical player
 * Floating redstone components on top of trapdoors **(patched in 23w35a)**
 * [Trapdoor update skipping](https://www.youtube.com/watch?v=hZEOyZ3CEXY) **(patched in 1.20-pre2)**
 * [Old Dragon Freezing](https://www.youtube.com/watch?v=kxHpyV95rB0) **(changed in 1.20-pre1)**
-* [1.14 Chunk Save State](https://www.youtube.com/watch?v=uw7vEGhKoH8) **(fixed in 19w35a)**
+* [1.14 Chunk Save State](https://www.youtube.com/watch?v=uw7vEGhKoH8) **(patched in 19w35a)**
 
 You can configure every setting individually in antishadowpatch_config.json
