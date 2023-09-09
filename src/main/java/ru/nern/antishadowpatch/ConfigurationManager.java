@@ -69,11 +69,9 @@ public class ConfigurationManager
     public static class Config
     {
         public boolean bringBackStackOverflowSuppression = true;
-        public boolean bringBackCCESuppression = true;
+        public boolean gracefulStackOverflowHandling = true;
         public boolean bringBack1_17ItemShadowing = true;
         public boolean bringBack1_18ItemShadowing = true;
-        public boolean bringBackInfiniteFurnaceXPBug = true;
-        public boolean bringBackFloatingRedstoneComponentsOnTopOfTrapdoor = true;
         public boolean bringBackTrapdoorUpdateSkipping = true;
         public boolean bringBackOldDragonFreezing = true;
         public boolean bringBackChunkSaveState = false;
