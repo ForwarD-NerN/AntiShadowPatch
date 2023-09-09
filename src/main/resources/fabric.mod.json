@@ -4,7 +4,7 @@
   "version": "${version}",
 
   "name": "Anti Shadow Patch",
-  "description": "Reintroduces the bugs that Mojang patched",
+  "description": "Reintroduces the bugs that Mojang have patched",
   "authors": [
     "ForwarD NerN"
   ],
