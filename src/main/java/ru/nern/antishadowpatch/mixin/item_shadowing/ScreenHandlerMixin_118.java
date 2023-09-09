@@ -30,12 +30,12 @@ public abstract class ScreenHandlerMixin_118 {
     )
     private boolean antishadowpatch_cancel118ItemShadowingPatch(Slot slot, ItemStack stack)
     {
-        return !AntiShadowPatch.config.bringBack1_18ItemShadowing;
+        return !AntiShadowPatch.config.items.bringBack1_18ItemShadowing;
     }
 
     @Inject(method = "internalOnSlotClick", at = @At(value = "INVOKE", target = "Lnet/minecraft/screen/ScreenHandler;setCursorStack(Lnet/minecraft/item/ItemStack;)V", ordinal = 4))
     private void antishadowpatch_bringBack118ItemShadowing(int slotIndex, int button, SlotActionType actionType, PlayerEntity player, CallbackInfo ci) {
-        if(AntiShadowPatch.config.bringBack1_18ItemShadowing)
+        if(AntiShadowPatch.config.items.bringBack1_18ItemShadowing)
         {
             slots.get(slotIndex).setStack(getCursorStack());
         }
