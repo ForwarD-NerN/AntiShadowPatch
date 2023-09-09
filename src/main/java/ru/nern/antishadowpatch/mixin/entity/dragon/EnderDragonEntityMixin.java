@@ -1,4 +1,4 @@
-package ru.nern.antishadowpatch.mixin.dragon;
+package ru.nern.antishadowpatch.mixin.entity.dragon;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.boss.dragon.EnderDragonEntity;
@@ -21,7 +21,7 @@ public class EnderDragonEntityMixin {
 
     @Inject(method = "<init>", at = @At("TAIL"))
     private void antishadowpatch_bringBackOldDragonFreezing(EntityType<? extends EnderDragonEntity> entityType, World world, CallbackInfo ci) {
-        if(AntiShadowPatch.config.bringBackOldDragonFreezing) this.fight = world instanceof ServerWorld ? ((ServerWorld)world).getEnderDragonFight() : null;
+        if(AntiShadowPatch.config.entities.bringBackOldDragonFreezing) this.fight = world instanceof ServerWorld ? ((ServerWorld)world).getEnderDragonFight() : null;
     }
 
 }

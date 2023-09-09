@@ -14,7 +14,7 @@ import java.nio.ByteBuffer;
 public class RegionFileMixin {
     @Inject(method = "writeChunk", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/storage/RegionFile;getExternalChunkPath(Lnet/minecraft/util/math/ChunkPos;)Ljava/nio/file/Path;", shift = At.Shift.AFTER), cancellable = true)
     private void antishadowpatch_bringBackChunkSaveState(ChunkPos pos, ByteBuffer buf, CallbackInfo ci) {
-        if(AntiShadowPatch.config.bringBackChunkSaveState)
+        if(AntiShadowPatch.config.blocks.bringBackChunkSaveState)
         {
             ci.cancel();
             throw new RuntimeException(String.format("Too big to save, %d > 1048576", buf.remaining()));

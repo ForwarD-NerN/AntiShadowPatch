@@ -17,6 +17,6 @@ public class ShulkerBoxBlockMixin
 	@ModifyArg(method = "getComparatorOutput", at = @At(value = "INVOKE",
 			target = "Lnet/minecraft/screen/ScreenHandler;calculateComparatorOutput(Lnet/minecraft/block/entity/BlockEntity;)I"), index = 0)
 	private @Nullable BlockEntity antishadowpatch_bringBackCCE(@Nullable BlockEntity blockEntity) {
-		return AntiShadowPatch.config.bringBackCCESuppression ? (ShulkerBoxBlockEntity) blockEntity : blockEntity;
+		return AntiShadowPatch.config.blocks.bringBackCCESuppression ? (ShulkerBoxBlockEntity) blockEntity : blockEntity;
 	}
 }

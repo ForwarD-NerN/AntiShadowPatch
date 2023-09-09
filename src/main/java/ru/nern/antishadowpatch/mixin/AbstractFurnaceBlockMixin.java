@@ -20,6 +20,6 @@ public class AbstractFurnaceBlockMixin {
             at = @At(value = "INVOKE", target = "Lnet/minecraft/block/BlockWithEntity;onStateReplaced(Lnet/minecraft/block/BlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/BlockState;Z)V", ordinal = 0)
     )
     private boolean antishadowpatch_bringBackFurnaceXPDupe(BlockWithEntity block, BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
-        return !AntiShadowPatch.config.bringBackInfiniteFurnaceXPBug;
+        return !AntiShadowPatch.config.entities.bringBackInfiniteFurnaceXPBug;
     }
 }

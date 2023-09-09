@@ -8,7 +8,6 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.Constant;
 import ru.nern.antishadowpatch.AntiShadowPatch;
 
-
 @Mixin(RedstoneWireBlock.class)
 public class RedstoneWireBlockMixin {
 
@@ -16,6 +15,6 @@ public class RedstoneWireBlockMixin {
             method = "getRenderConnectionType(Lnet/minecraft/world/BlockView;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/math/Direction;Z)Lnet/minecraft/block/enums/WireConnection;",
             constant = @Constant(classValue = TrapdoorBlock.class))
     private boolean antishadowpatch_bringBackTrapdoorUpdateSkipping(Object obj, Operation<Boolean> original) {
-        return !AntiShadowPatch.config.bringBackTrapdoorUpdateSkipping && original.call(obj);
+        return !AntiShadowPatch.config.blocks.bringBackTrapdoorUpdateSkipping && original.call(obj);
     }
 }
