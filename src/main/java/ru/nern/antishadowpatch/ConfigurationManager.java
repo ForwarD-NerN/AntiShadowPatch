@@ -75,6 +75,7 @@ public class ConfigurationManager
         public Blocks blocks;
         public Entities entities;
         public Items items;
+        public Misc misc;
 
         public static class Blocks{
             public boolean bringBackStackOverflowSuppression = true;
@@ -95,11 +96,18 @@ public class ConfigurationManager
             public boolean bringBack1_18ItemShadowing = true;
         }
 
+
+        public static class Misc{
+            //https://www.youtube.com/watch?v=Qjtqd9EjvaA
+            public boolean bringBackWitherInvulnerableArmorStands = true;
+        }
+
         public Config()
         {
             blocks = new Blocks();
             entities = new Entities();
             items = new Items();
+            misc = new Misc();
         }
 
     }

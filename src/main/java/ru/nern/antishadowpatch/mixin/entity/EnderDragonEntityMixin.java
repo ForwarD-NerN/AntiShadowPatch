@@ -1,4 +1,4 @@
-package ru.nern.antishadowpatch.mixin.entity.dragon;
+package ru.nern.antishadowpatch.mixin.entity;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.boss.dragon.EnderDragonEntity;
