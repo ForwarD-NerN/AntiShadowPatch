@@ -1,4 +1,4 @@
-package ru.nern.antishadowpatch.mixin;
+package ru.nern.antishadowpatch.mixin.block;
 
 import com.llamalad7.mixinextras.injector.WrapWithCondition;
 import net.minecraft.block.AbstractFurnaceBlock;

@@ -4,19 +4,18 @@
   "package": "ru.nern.antishadowpatch.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "AbstractFurnaceBlockMixin",
-    "RegionFileMixin",
-    "SystemDetailsMixin",
-    "block_updates.RedstoneWireBlockMixin",
-    "block_updates.ShulkerBoxBlockMixin",
-    "block_updates.WorldMixin",
+    "block.AbstractFurnaceBlockMixin",
+    "world.RegionFileMixin",
+    "block.updates.SystemDetailsMixin",
+    "block.updates.RedstoneWireBlockMixin",
+    "block.updates.ShulkerBoxBlockMixin",
+    "block.updates.WorldMixin",
     "entity.ArmorStandEntityMixin",
     "entity.EnderDragonEntityMixin",
     "floating_components.ComparatorBlockMixin",
     "floating_components.RedstoneWireBlockMixin",
     "floating_components.RepeaterBlockMixin",
-    "item_shadowing.ScreenHandlerMixin_117",
-    "item_shadowing.ScreenHandlerMixin_118"
+    "item_shadowing.ScreenHandlerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

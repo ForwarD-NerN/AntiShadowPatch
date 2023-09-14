@@ -1,4 +1,4 @@
-package ru.nern.antishadowpatch.mixin.block_updates;
+package ru.nern.antishadowpatch.mixin.block.updates;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;

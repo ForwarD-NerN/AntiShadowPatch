@@ -1,4 +1,4 @@
-package ru.nern.antishadowpatch.mixin;
+package ru.nern.antishadowpatch.mixin.block.updates;
 
 import net.minecraft.util.SystemDetails;
 import org.spongepowered.asm.mixin.Mixin;

@@ -1,4 +1,4 @@
-package ru.nern.antishadowpatch.mixin;
+package ru.nern.antishadowpatch.mixin.world;
 
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.storage.RegionFile;
