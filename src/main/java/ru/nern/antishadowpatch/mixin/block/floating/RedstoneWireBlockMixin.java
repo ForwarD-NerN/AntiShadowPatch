@@ -1,8 +1,8 @@
-package ru.nern.antishadowpatch.mixin.floating_components;
+package ru.nern.antishadowpatch.mixin.block.floating;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.ComparatorBlock;
+import net.minecraft.block.RedstoneWireBlock;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.WorldAccess;
@@ -10,20 +10,16 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import ru.nern.antishadowpatch.AntiShadowPatch;
 
-
-@Mixin(ComparatorBlock.class)
-public class ComparatorBlockMixin
+//Brings back floating redstone dust
+@Mixin(RedstoneWireBlock.class)
+public class RedstoneWireBlockMixin
 {
-
-    //Brings back floating comparator
 
     @ModifyReturnValue(
             method = "getStateForNeighborUpdate",
             at = @At(value = "RETURN", ordinal = 0)
     )
-    private BlockState antishadowpatch_bringBackFloatingComparatorOnTrapdoor(BlockState original, BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+    private BlockState antishadowpatch_bringBackFloatingRedstoneOnTrapdoor(BlockState original, BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
         return AntiShadowPatch.config.blocks.bringBackFloatingRedstoneComponentsOnTopOfTrapdoor ? state : original;
     }
-
 }
-

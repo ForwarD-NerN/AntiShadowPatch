@@ -5,17 +5,17 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "block.AbstractFurnaceBlockMixin",
-    "world.RegionFileMixin",
-    "block.updates.SystemDetailsMixin",
+    "block.floating.ComparatorBlockMixin",
+    "block.floating.RedstoneWireBlockMixin",
+    "block.floating.RepeaterBlockMixin",
     "block.updates.RedstoneWireBlockMixin",
     "block.updates.ShulkerBoxBlockMixin",
+    "block.updates.SystemDetailsMixin",
     "block.updates.WorldMixin",
     "entity.ArmorStandEntityMixin",
     "entity.EnderDragonEntityMixin",
-    "floating_components.ComparatorBlockMixin",
-    "floating_components.RedstoneWireBlockMixin",
-    "floating_components.RepeaterBlockMixin",
-    "item_shadowing.ScreenHandlerMixin"
+    "item.ScreenHandlerMixin",
+    "world.RegionFileMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -4,11 +4,12 @@
   "version": "${version}",
 
   "name": "Anti Shadow Patch",
-  "description": "Reintroduces the bugs that Mojang have patched",
+  "description": "Reintroduces bugs that Mojang has patched",
   "authors": [
     "ForwarD NerN"
   ],
   "contact": {
+    "homepage": "https://modrinth.com/mod/antishadowpatch/",
     "sources": "https://github.com/ForwarD-NerN/AntiShadowPatch"
   },
   "license": "MIT",
