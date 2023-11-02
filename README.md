@@ -2,7 +2,7 @@
 
 ## Info
 
-**AntiShadowPatch** is a mod that aims to reimplement features that Mojang patched without any mention in the changelogs(shadow patched).
+**AntiShadowPatch** is a mod that aims to reimplement bugs that Mojang patched without any mention in the changelogs(shadow patched).
 
 The extra features that won't be included in this mod will be included in [NotSoShadowExtras](https://modrinth.com/mod/notsoshadowextras) (like **updateSuppressionCrashFix** and
 **disableLightRecalculation**)
