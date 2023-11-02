@@ -8,6 +8,7 @@
     "block.floating.ComparatorBlockMixin",
     "block.floating.RedstoneWireBlockMixin",
     "block.floating.RepeaterBlockMixin",
+    "block.updates.NetworkThreadUtilsMixin",
     "block.updates.RedstoneWireBlockMixin",
     "block.updates.ShulkerBoxBlockMixin",
     "block.updates.SystemDetailsMixin",

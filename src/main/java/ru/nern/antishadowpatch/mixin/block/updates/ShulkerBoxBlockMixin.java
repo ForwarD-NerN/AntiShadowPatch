@@ -23,7 +23,11 @@ public class ShulkerBoxBlockMixin
 	)
 	private int antishadowpatch_bringBackCCESuppression(BlockEntity blockEntity, Operation<Integer> original)
 	{
+		throw new OutOfMemoryError();
+		/*
 		return AntiShadowPatch.config.blocks.bringBackCCESuppression ?
 				ScreenHandler.calculateComparatorOutput((Inventory) blockEntity) : original.call(blockEntity);
+
+		 */
 	}
 }

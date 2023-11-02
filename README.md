@@ -10,6 +10,7 @@ The extra features that won't be included in this mod will be included in [NotSo
 ## The list of features
 * [StackOverflow update suppression](https://www.youtube.com/watch?v=Dtke-Co5HFM) **(patched in 22w11a)**
 * [Graceful stackoverflow handling](https://bugs.mojang.com/browse/MC-248200) **(changed in 1.18-pre2)**
+* Graceful OOM handling **(changed in 23w35a)**
 * [CCE update suppression](https://www.youtube.com/watch?v=f4ty-PZcvrI) **(patched in 23w35a)**
 * [Item Shadowing 1.17](https://www.youtube.com/watch?v=oz2u7YMPjF4) **(patched in 21w43a)**
 * [Item Shadowing 1.18](https://www.youtube.com/watch?v=gLQP_qfkjoQ) **(patched in "unknown, needs testing")**
@@ -19,5 +20,6 @@ The extra features that won't be included in this mod will be included in [NotSo
 * [Old Dragon Freezing](https://www.youtube.com/watch?v=kxHpyV95rB0) **(changed in 1.20-pre1)**
 * [1.14 Chunk Save State](https://www.youtube.com/watch?v=uw7vEGhKoH8) **(patched in 19w35a)**
 * [Wither Invulnerable Armor Stands](https://www.youtube.com/watch?v=Qjtqd9EjvaA) **(patched in 1.20.2 pre-4)**
+
 
 You can configure every setting individually in antishadowpatch_config.json

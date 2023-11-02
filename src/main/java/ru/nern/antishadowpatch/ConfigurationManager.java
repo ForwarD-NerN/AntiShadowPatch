@@ -75,11 +75,13 @@ public class ConfigurationManager
         public Blocks blocks;
         public Entities entities;
         public Items items;
+        public WorldGen worldGen;
         public Misc misc;
 
         public static class Blocks{
             public boolean bringBackStackOverflowSuppression = true;
             public boolean gracefulStackOverflowHandling = true;
+            public boolean bringBackGracefulOOMHandling = true;
             public boolean bringBackCCESuppression = true;
             public boolean bringBackTrapdoorUpdateSkipping = true;
             public boolean bringBackChunkSaveState = false;
@@ -96,6 +98,9 @@ public class ConfigurationManager
             public boolean bringBack1_18ItemShadowing = true;
         }
 
+        public static class WorldGen{
+            public boolean bringBackSinkHoles = true;
+        }
 
         public static class Misc{
             //https://www.youtube.com/watch?v=Qjtqd9EjvaA
@@ -107,6 +112,7 @@ public class ConfigurationManager
             blocks = new Blocks();
             entities = new Entities();
             items = new Items();
+            worldGen = new WorldGen();
             misc = new Misc();
         }
 
