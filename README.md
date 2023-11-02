@@ -2,7 +2,7 @@
 
 ## Info
 
-Recently Mojang started to shadow patch a lot of bugs that many technical players liked. <br />**AntiShadowPatch** is a mod that aims to reimplement them **exactly as they were** in the previous versions.
+**AntiShadowPatch** is a mod that aims to reimplement features that Mojang patched without any mention in the changelogs(shadow patched).
 
 
 ## The list of features
