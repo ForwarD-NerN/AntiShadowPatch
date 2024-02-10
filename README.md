@@ -22,6 +22,8 @@ The extra features that won't be included in this mod will be included in [NotSo
 * [Wither Invulnerable Armor Stands](https://www.youtube.com/watch?v=Qjtqd9EjvaA) **(patched in 1.20.2 pre-4)**
 * [Understacked Items](https://mcdf.wiki.gg/wiki/Java_Edition:Understacked_Items) **(removed in 16w32a)**
 * * This feature is experimental and can break something. If you find any game breaking issues, please report them on the GitHub repo.
+* * Understacked items behave differently than on old versions, that's due to a lot of code changes. I will try to make it as close as possible to how it was.
+* * There's currently no known way to obtain them in survival, however, you can use [NotSoShadowExtras](https://modrinth.com/mod/notsoshadowextras) to /give them.
 
 
 You can configure every setting individually in antishadowpatch_config.json
