@@ -8,16 +8,22 @@
     "block.floating.ComparatorBlockMixin",
     "block.floating.RedstoneWireBlockMixin",
     "block.floating.RepeaterBlockMixin",
+    "block.updates.NetworkThreadUtilsMixin",
     "block.updates.RedstoneWireBlockMixin",
     "block.updates.ShulkerBoxBlockMixin",
     "block.updates.SystemDetailsMixin",
     "block.updates.WorldMixin",
     "entity.ArmorStandEntityMixin",
     "entity.EnderDragonEntityMixin",
+    "item.ItemScattererMixin",
+    "item.ItemStackMixin",
     "item.ScreenHandlerMixin",
     "world.RegionFileMixin"
   ],
   "injectors": {
     "defaultRequire": 1
-  }
+  },
+  "client": [
+    "client.DrawContextMixin"
+  ]
 }

@@ -20,7 +20,7 @@ public class EnderDragonEntityMixin {
     @Shadow private @Nullable EnderDragonFight fight;
 
     @Inject(method = "<init>", at = @At("TAIL"))
-    private void antishadowpatch_bringBackOldDragonFreezing(EntityType<? extends EnderDragonEntity> entityType, World world, CallbackInfo ci) {
+    private void antishadowpatch$bringBackOldDragonFreezing(EntityType<? extends EnderDragonEntity> entityType, World world, CallbackInfo ci) {
         if(AntiShadowPatch.config.entities.bringBackOldDragonFreezing) this.fight = world instanceof ServerWorld ? ((ServerWorld)world).getEnderDragonFight() : null;
     }
 

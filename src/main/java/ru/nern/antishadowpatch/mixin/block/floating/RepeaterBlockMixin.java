@@ -17,7 +17,7 @@ public class RepeaterBlockMixin {
             method = "getStateForNeighborUpdate",
             at = @At(value = "RETURN", ordinal = 0)
     )
-    private BlockState antishadowpatch_bringBackFloatingRepeaterOnTrapdoor(BlockState original, BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+    private BlockState antishadowpatch$bringBackFloatingRepeaterOnTrapdoor(BlockState original, BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
         return AntiShadowPatch.config.blocks.bringBackFloatingRedstoneComponentsOnTopOfTrapdoor ? state : original;
     }
 }

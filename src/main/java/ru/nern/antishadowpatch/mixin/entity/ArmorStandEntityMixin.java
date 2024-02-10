@@ -17,7 +17,7 @@ public class ArmorStandEntityMixin {
             method = "damage",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/damage/DamageSource;isIn(Lnet/minecraft/registry/tag/TagKey;)Z", ordinal = 4)
     )
-    private boolean antishadowpatch_bringBackWitherInvulnerableArmorStands(DamageSource source, TagKey<DamageType> tag, Operation<Boolean> original) {
+    private boolean antishadowpatch$bringBackWitherInvulnerableArmorStands(DamageSource source, TagKey<DamageType> tag, Operation<Boolean> original) {
         if (AntiShadowPatch.config.misc.bringBackWitherInvulnerableArmorStands) {
             return source.getSource() instanceof PersistentProjectileEntity && ((PersistentProjectileEntity)source.getSource()).getPierceLevel() > 0;
         } else {

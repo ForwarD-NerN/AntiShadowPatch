@@ -19,5 +19,7 @@ The extra features that won't be included in this mod will be included in [NotSo
 * [Old Dragon Freezing](https://www.youtube.com/watch?v=kxHpyV95rB0) **(changed in 1.20-pre1)**
 * [1.14 Chunk Save State](https://www.youtube.com/watch?v=uw7vEGhKoH8) **(patched in 19w35a)**
 * [Wither Invulnerable Armor Stands](https://www.youtube.com/watch?v=Qjtqd9EjvaA) **(patched in 1.20.2 pre-4)**
+* [Understacked Items](https://mcdf.wiki.gg/wiki/Java_Edition:Understacked_Items) **(removed in 16w32a)**
+* * This feature is experimental and can break something. If you find any game breaking issues, please report them on the GitHub repo.
 
 You can configure every setting individually in antishadowpatch_config.json

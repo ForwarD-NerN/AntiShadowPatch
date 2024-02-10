@@ -19,7 +19,7 @@ public class RedstoneWireBlockMixin
             method = "getStateForNeighborUpdate",
             at = @At(value = "RETURN", ordinal = 0)
     )
-    private BlockState antishadowpatch_bringBackFloatingRedstoneOnTrapdoor(BlockState original, BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+    private BlockState antishadowpatch$bringBackFloatingRedstoneOnTrapdoor(BlockState original, BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
         return AntiShadowPatch.config.blocks.bringBackFloatingRedstoneComponentsOnTopOfTrapdoor ? state : original;
     }
 }

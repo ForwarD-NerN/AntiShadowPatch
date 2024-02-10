@@ -20,7 +20,7 @@ public class ComparatorBlockMixin
             method = "getStateForNeighborUpdate",
             at = @At(value = "RETURN", ordinal = 0)
     )
-    private BlockState antishadowpatch_bringBackFloatingComparatorOnTrapdoor(BlockState original, BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+    private BlockState antishadowpatch$bringBackFloatingComparatorOnTrapdoor(BlockState original, BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
         return AntiShadowPatch.config.blocks.bringBackFloatingRedstoneComponentsOnTopOfTrapdoor ? state : original;
     }
 

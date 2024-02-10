@@ -80,6 +80,7 @@ public class ConfigurationManager
         public static class Blocks{
             public boolean bringBackStackOverflowSuppression = true;
             public boolean gracefulStackOverflowHandling = true;
+            public boolean bringBackGracefulOOMHandling = true;
             public boolean bringBackCCESuppression = true;
             public boolean bringBackTrapdoorUpdateSkipping = true;
             public boolean bringBackChunkSaveState = false;
@@ -94,8 +95,9 @@ public class ConfigurationManager
         public static class Items{
             public boolean bringBack1_17ItemShadowing = true;
             public boolean bringBack1_18ItemShadowing = true;
+            public boolean bringBackUnderstackedItems = false;
+            public boolean bringBackUnderstackedItemsBehavior = false;
         }
-
 
         public static class Misc{
             //https://www.youtube.com/watch?v=Qjtqd9EjvaA

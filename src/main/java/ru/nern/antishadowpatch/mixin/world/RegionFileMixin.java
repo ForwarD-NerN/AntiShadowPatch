@@ -13,7 +13,7 @@ import java.nio.ByteBuffer;
 @Mixin(RegionFile.class)
 public class RegionFileMixin {
     @Inject(method = "writeChunk", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/storage/RegionFile;getExternalChunkPath(Lnet/minecraft/util/math/ChunkPos;)Ljava/nio/file/Path;", shift = At.Shift.AFTER), cancellable = true)
-    private void antishadowpatch_bringBackChunkSaveState(ChunkPos pos, ByteBuffer buf, CallbackInfo ci) {
+    private void antishadowpatch$bringBackChunkSaveState(ChunkPos pos, ByteBuffer buf, CallbackInfo ci) {
         if(AntiShadowPatch.config.blocks.bringBackChunkSaveState)
         {
             ci.cancel();
