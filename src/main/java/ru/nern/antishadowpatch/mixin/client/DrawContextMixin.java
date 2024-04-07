@@ -9,9 +9,11 @@ import ru.nern.antishadowpatch.AntiShadowPatch;
 
 @Mixin(DrawContext.class)
 public class DrawContextMixin {
+
+    //Not sure if the color is correct, got it from Google
     @ModifyArgs(method = "drawItemInSlot(Lnet/minecraft/client/font/TextRenderer;Lnet/minecraft/item/ItemStack;IILjava/lang/String;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/DrawContext;drawText(Lnet/minecraft/client/font/TextRenderer;Ljava/lang/String;IIIZ)I"))
     private void antishadowpatch$changeItemCountColor(Args args) {
-        if(AntiShadowPatch.config.items.bringBackUnderstackedItems && ((String)args.get(1)).contains("-")) {
+        if(AntiShadowPatch.config.items.bringBackUnderstackedItems && ((String)args.get(1)).startsWith("-")) {
             args.set(4, 0xFF5555);
         }
     }
