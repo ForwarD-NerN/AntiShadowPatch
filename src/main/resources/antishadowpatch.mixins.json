@@ -15,15 +15,11 @@
     "block.updates.WorldMixin",
     "entity.ArmorStandEntityMixin",
     "entity.EnderDragonEntityMixin",
-    "item.ItemScattererMixin",
-    "item.ItemStackMixin",
+    "entity.MobEntityMixin",
     "item.ScreenHandlerMixin",
     "world.RegionFileMixin"
   ],
   "injectors": {
     "defaultRequire": 1
-  },
-  "client": [
-    "client.DrawContextMixin"
-  ]
+  }
 }

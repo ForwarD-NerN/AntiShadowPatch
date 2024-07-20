@@ -36,8 +36,6 @@ dependencies {
 
 
 	//modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-
-	implementation(annotationProcessor("com.github.llamalad7.mixinextras:mixinextras-fabric:${project.mixinextras_version}"))
 }
 
 processResources {

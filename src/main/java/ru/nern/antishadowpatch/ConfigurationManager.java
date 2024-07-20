@@ -90,13 +90,12 @@ public class ConfigurationManager
         public static class Entities{
             public boolean bringBackOldDragonFreezing = true;
             public boolean bringBackInfiniteFurnaceXPBug = true;
+            public boolean bringBackShadowItemsInMobInventory = true;
         }
 
         public static class Items{
             public boolean bringBack1_17ItemShadowing = true;
             public boolean bringBack1_18ItemShadowing = true;
-            public boolean bringBackUnderstackedItems = false;
-            public boolean bringBackUnderstackedItemsBehavior = false;
         }
 
         public static class Misc{
