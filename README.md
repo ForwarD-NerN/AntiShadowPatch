@@ -7,7 +7,7 @@
 The extra features that won't be included in this mod will be included in [NotSoShadowExtras](https://modrinth.com/mod/notsoshadowextras) (like **updateSuppressionCrashFix** and
 **disableLightRecalculation**)
 
-## The list of features
+## The list of features(as of 1.0.8)
 * [StackOverflow Update Suppression](https://www.youtube.com/watch?v=Dtke-Co5HFM) **(patched in 22w11a)**
 * [Graceful StackOverflow Handling](https://bugs.mojang.com/browse/MC-248200) **(changed in 1.18-pre2)**
 * Graceful OOM handling **(changed in 23w35a)**

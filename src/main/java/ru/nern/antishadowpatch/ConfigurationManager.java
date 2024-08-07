@@ -79,10 +79,11 @@ public class ConfigurationManager
 
         public static class Blocks{
             public boolean bringBackStackOverflowSuppression = true;
+            public boolean bringBackCCESuppression = true;
+            public boolean bringBackBlockEntitySwap = true;
+            public boolean bringBackTrapdoorUpdateSkipping = true;
             public boolean gracefulStackOverflowHandling = true;
             public boolean bringBackGracefulOOMHandling = true;
-            public boolean bringBackCCESuppression = true;
-            public boolean bringBackTrapdoorUpdateSkipping = true;
             public boolean bringBackChunkSaveState = false;
             public boolean bringBackFloatingRedstoneComponentsOnTopOfTrapdoor = true;
         }
