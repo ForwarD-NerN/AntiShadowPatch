@@ -6,7 +6,10 @@
   "mixins": [
     "block.AbstractFurnaceBlockMixin",
     "block.entity.BlockEntityMixin",
-    "block.entity.WorldChunkMixin",
+    "block.entity.ChiseledBookShelfBlockMixin",
+    "block.entity.LecternBlockMixin",
+    "block.entity.SculkSensorBlockMixin",
+    "block.entity.ShulkerBoxBlockMixin",
     "block.floating.ComparatorBlockMixin",
     "block.floating.RedstoneWireBlockMixin",
     "block.floating.RepeaterBlockMixin",

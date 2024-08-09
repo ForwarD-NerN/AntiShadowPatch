@@ -1,8 +1,10 @@
-package ru.nern.antishadowpatch;
+package ru.nern.antishadowpatch.config;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import net.fabricmc.loader.api.FabricLoader;
+import net.fabricmc.loader.impl.util.version.VersionPredicateParser;
+import ru.nern.antishadowpatch.AntiShadowPatch;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -80,6 +82,7 @@ public class ConfigurationManager
         public static class Blocks{
             public boolean bringBackStackOverflowSuppression = true;
             public boolean bringBackCCESuppression = true;
+            public boolean bringBackSwappedBlockEntitiesExistence = true;
             public boolean bringBackBlockEntitySwap = true;
             public boolean bringBackTrapdoorUpdateSkipping = true;
             public boolean gracefulStackOverflowHandling = true;
