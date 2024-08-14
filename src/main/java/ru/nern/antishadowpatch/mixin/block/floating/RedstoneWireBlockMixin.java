@@ -20,6 +20,6 @@ public class RedstoneWireBlockMixin
             at = @At(value = "RETURN", ordinal = 0)
     )
     private BlockState antishadowpatch$bringBackFloatingRedstoneOnTrapdoor(BlockState original, BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
-        return AntiShadowPatch.config.blocks.bringBackFloatingRedstoneComponentsOnTopOfTrapdoor ? state : original;
+        return AntiShadowPatch.config().Blocks.bringBackFloatingRedstoneComponentsOnTopOfTrapdoor ? state : original;
     }
 }

@@ -1,6 +1,6 @@
 package ru.nern.antishadowpatch.mixin.item;
 
-import com.llamalad7.mixinextras.injector.WrapWithCondition;
+import com.llamalad7.mixinextras.injector.v2.WrapWithCondition;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
@@ -31,12 +31,12 @@ public abstract class ScreenHandlerMixin {
     )
     private boolean antishadowpatch$cancel117ItemShadowingPatch(PlayerInventory inventory, int button, ItemStack stack)
     {
-        return !AntiShadowPatch.config.items.bringBack1_17ItemShadowing;
+        return !AntiShadowPatch.config().Items.bringBackItemShadowing_1_17;
     }
 
     @Inject(method = "internalOnSlotClick", at = @At(value = "INVOKE", target = "Lnet/minecraft/screen/slot/Slot;setStack(Lnet/minecraft/item/ItemStack;)V", ordinal = 4, shift = At.Shift.AFTER))
     private void antishadowpatch$bringBack117ItemShadowing(int slotIndex, int button, SlotActionType actionType, PlayerEntity player, CallbackInfo ci) {
-        if(AntiShadowPatch.config.items.bringBack1_17ItemShadowing)
+        if(AntiShadowPatch.config().Items.bringBackItemShadowing_1_17)
         {
             player.getInventory().setStack(button, ItemStack.EMPTY);
         }
@@ -49,12 +49,12 @@ public abstract class ScreenHandlerMixin {
     )
     private boolean antishadowpatch$cancel118ItemShadowingPatch(Slot slot, ItemStack stack)
     {
-        return !AntiShadowPatch.config.items.bringBack1_18ItemShadowing;
+        return !AntiShadowPatch.config().Items.bringBackItemShadowing_1_18;
     }
 
     @Inject(method = "internalOnSlotClick", at = @At(value = "INVOKE", target = "Lnet/minecraft/screen/ScreenHandler;setCursorStack(Lnet/minecraft/item/ItemStack;)V", ordinal = 4))
     private void antishadowpatch$bringBack118ItemShadowing(int slotIndex, int button, SlotActionType actionType, PlayerEntity player, CallbackInfo ci) {
-        if(AntiShadowPatch.config.items.bringBack1_18ItemShadowing)
+        if(AntiShadowPatch.config().Items.bringBackItemShadowing_1_18)
         {
             slots.get(slotIndex).setStack(getCursorStack());
         }

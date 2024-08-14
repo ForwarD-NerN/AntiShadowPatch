@@ -1,6 +1,6 @@
 package ru.nern.antishadowpatch.mixin.block;
 
-import com.llamalad7.mixinextras.injector.WrapWithCondition;
+import com.llamalad7.mixinextras.injector.v2.WrapWithCondition;
 import net.minecraft.block.AbstractFurnaceBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.BlockWithEntity;
@@ -26,12 +26,12 @@ public abstract class AbstractFurnaceBlockMixin extends BlockWithEntity {
             at = @At(value = "INVOKE", target = "Lnet/minecraft/block/BlockWithEntity;onStateReplaced(Lnet/minecraft/block/BlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/BlockState;Z)V")
     )
     private boolean antishadowpatch$bringBackFurnaceXPDupe(BlockWithEntity block, BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
-        return !AntiShadowPatch.config.entities.bringBackInfiniteFurnaceXPBug;
+        return !AntiShadowPatch.config().Blocks.bringBackFurnaceXPDupe;
     }
 
     @Inject(method = "onStateReplaced", at = @At("TAIL"))
     private void antishadowpatch$moveStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved, CallbackInfo ci) {
-        if(AntiShadowPatch.config.entities.bringBackInfiniteFurnaceXPBug) {
+        if(AntiShadowPatch.config().Blocks.bringBackFurnaceXPDupe) {
             super.onStateReplaced(state, world, pos, newState, moved);
         }
     }

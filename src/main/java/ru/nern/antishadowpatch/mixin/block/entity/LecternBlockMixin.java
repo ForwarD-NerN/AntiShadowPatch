@@ -25,12 +25,12 @@ public class LecternBlockMixin {
             at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;updateNeighborsAlways(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/Block;)V")
     )
     private boolean antishadowpatch$disableComparatorUpdateAfter(World instance, BlockPos pos, Block block) {
-        return !AntiShadowPatch.config.blocks.bringBackBlockEntitySwap;
+        return !AntiShadowPatch.config().Block_Entities.bringBackBlockEntitySwap;
     }
 
     @Inject(method = "onStateReplaced", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/BlockWithEntity;onStateReplaced(Lnet/minecraft/block/BlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/BlockState;Z)V"))
     private void antishadowpatch$moveComparatorUpdateBefore(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved, CallbackInfo ci) {
-        if(AntiShadowPatch.config.blocks.bringBackBlockEntitySwap && state.get(POWERED)) {
+        if(AntiShadowPatch.config().Block_Entities.bringBackBlockEntitySwap && state.get(POWERED)) {
             world.updateNeighborsAlways(pos.down(), (Block) (Object) this);
         }
     }

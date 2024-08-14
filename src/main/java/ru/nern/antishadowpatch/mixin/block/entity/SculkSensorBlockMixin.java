@@ -35,12 +35,12 @@ public abstract class SculkSensorBlockMixin extends BlockWithEntity {
             at = @At(value = "INVOKE", target = "Lnet/minecraft/block/SculkSensorBlock;updateNeighbors(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/BlockState;)V")
     )
     private boolean antishadowpatch$disableComparatorUpdateAfter(World world, BlockPos pos, BlockState state) {
-        return !AntiShadowPatch.config.blocks.bringBackBlockEntitySwap;
+        return !AntiShadowPatch.config().Block_Entities.bringBackBlockEntitySwap;
     }
 
     @Inject(method = "onStateReplaced", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/BlockWithEntity;onStateReplaced(Lnet/minecraft/block/BlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/BlockState;Z)V"))
     private void antishadowpatch$moveComparatorUpdateBefore(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved, CallbackInfo ci) {
-        if(AntiShadowPatch.config.blocks.bringBackBlockEntitySwap && getPhase(state) == SculkSensorPhase.ACTIVE) {
+        if(AntiShadowPatch.config().Block_Entities.bringBackBlockEntitySwap && getPhase(state) == SculkSensorPhase.ACTIVE) {
             updateNeighbors(world, pos, state);
         }
     }

@@ -15,7 +15,7 @@ public class NetworkThreadUtilsMixin {
             method = "method_11072(Lnet/minecraft/network/listener/PacketListener;Lnet/minecraft/network/packet/Packet;)V",
             constant = @Constant(classValue = OutOfMemoryError.class))
     private static boolean antishadowpatch$bringBackGracefulOOMHandling(Object obj, Operation<Boolean> original) {
-        return !AntiShadowPatch.config.blocks.bringBackGracefulOOMHandling && original.call(obj);
+        return !AntiShadowPatch.config().Misc.bringBackGracefulOOMHandling && original.call(obj);
     }
 
 
