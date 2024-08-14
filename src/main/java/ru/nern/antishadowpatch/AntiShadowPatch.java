@@ -6,9 +6,9 @@ import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ru.nern.antishadowpatch.config.ConfigFixes;
-import ru.nern.fconfiglib.v1.config.ConfigManager;
-import ru.nern.fconfiglib.v1.config.LoggerWrapper;
-import ru.nern.fconfiglib.v1.config.json.JsonConfigManager;
+import ru.nern.fconfiglib.v1.ConfigManager;
+import ru.nern.fconfiglib.v1.LoggerWrapper;
+import ru.nern.fconfiglib.v1.json.JsonConfigManager;
 
 import java.util.Collections;
 
