@@ -32,7 +32,7 @@ public class AntiShadowPatch implements ModInitializer {
 		}
 	};
 
-	public static int CONFIG_VERSION = 1;
+	public static int CONFIG_VERSION = 2;
 	public static ConfigManager<Config, JsonObject> configManager = JsonConfigManager
 			.builderOf(Config.class)
 			.modId("antishadowpatch")
