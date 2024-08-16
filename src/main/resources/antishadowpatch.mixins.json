@@ -16,6 +16,7 @@
     "block.updates.NetworkThreadUtilsMixin",
     "block.updates.RedstoneWireBlockMixin",
     "block.updates.ShulkerBoxBlockMixin",
+    "block.updates.SimpleNeighborUpdaterMixin",
     "block.updates.SystemDetailsMixin",
     "block.updates.WorldMixin",
     "entity.ArmorStandEntityMixin",

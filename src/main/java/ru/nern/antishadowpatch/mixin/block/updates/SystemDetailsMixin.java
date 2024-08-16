@@ -14,13 +14,13 @@ public class SystemDetailsMixin {
     @ModifyArg(method = "tryAddGroup", at = @At(value = "INVOKE", target = "Lorg/slf4j/Logger;warn(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V"),
             index = 2)
     private Object antishadowpatch$gracefulStackOverflowHandling(Object throwable) {
-        return AntiShadowPatch.config().Misc.bringBackGracefulSOHandling ? null : throwable;
+        return AntiShadowPatch.isConfigInitialized() && AntiShadowPatch.config().Misc.BringBackGracefulSOHandling ? null : throwable;
     }
 
     @ModifyArg(method = "addSection(Ljava/lang/String;Ljava/util/function/Supplier;)V", at = @At(value = "INVOKE", target = "Lorg/slf4j/Logger;warn(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V"),
             index = 2)
     private Object antishadowpatch$gracefulStackOverflowHandling2(Object throwable) {
-        return AntiShadowPatch.config().Misc.bringBackGracefulSOHandling ? null : throwable;
+        return AntiShadowPatch.isConfigInitialized() && AntiShadowPatch.config().Misc.BringBackGracefulSOHandling ? null : throwable;
     }
 
 

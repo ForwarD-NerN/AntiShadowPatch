@@ -50,6 +50,10 @@ public class AntiShadowPatch implements ModInitializer {
 		return configManager.config();
 	}
 
+	public static boolean isConfigInitialized() {
+		return configManager.isInitialized();
+	}
+
 	public static class Config
 	{
 		public BlockUpdates Block_Updates = new BlockUpdates();
@@ -61,39 +65,39 @@ public class AntiShadowPatch implements ModInitializer {
 		public Misc Misc = new Misc();
 
 		public static class BlockUpdates {
-			public boolean bringBackSOSuppression = true;
-			public boolean bringBackCCESuppression = true;
-			public boolean bringBackTrapdoorUpdateSkipping = true;
+			public boolean BringBackSOSuppression = true;
+			public boolean BringBackCCESuppression = true;
+			public boolean BringBackTrapdoorUpdateSkipping = true;
 		}
 
 		public static class Blocks {
-			public boolean bringBackFloatingRedstoneComponentsOnTopOfTrapdoor = true;
-			public boolean bringBackFurnaceXPDupe = true;
+			public boolean BringBackFloatingRedstoneComponentsOnTopOfTrapdoor = true;
+			public boolean BringBackFurnaceXPDupe = true;
 		}
 
 		public static class BlockEntities {
-			public boolean bringBackBlockEntitySwap = true;
-			public boolean bringBackBlocksWithSwappedBlockEntities = true;
+			public boolean BringBackBlockEntitySwap = true;
+			public boolean BringBackBlocksWithSwappedBlockEntities = true;
 		}
 
 		public static class Items {
-			public boolean bringBackItemShadowing_1_17 = true;
-			public boolean bringBackItemShadowing_1_18 = true;
+			public boolean BringBackItemShadowing_1_17 = true;
+			public boolean BringBackItemShadowing_1_18 = true;
 		}
 
 		public static class World {
-			public boolean bringBackChunkSaveState_1_14 = false;
+			public boolean BringBackChunkSaveState_1_14 = false;
 		}
 
 		public static class Entities {
-			public boolean bringBackOldDragonFreezing = true;
-			public boolean bringBackArmorStandInvulnerableToWitherDamage = true;
-			public boolean bringBackShadowItemsInMobInventory = true;
+			public boolean BringBackOldDragonFreezing = true;
+			public boolean BringBackArmorStandInvulnerableToWitherDamage = true;
+			public boolean BringBackShadowItemsInMobInventory = true;
 		}
 
 		public static class Misc {
-			public boolean bringBackGracefulSOHandling = true;
-			public boolean bringBackGracefulOOMHandling = true;
+			public boolean BringBackGracefulSOHandling = true;
+			public boolean BringBackGracefulOOMHandling = true;
 		}
 	}
 }

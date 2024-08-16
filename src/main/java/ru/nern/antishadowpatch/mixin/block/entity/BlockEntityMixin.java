@@ -12,7 +12,7 @@ import ru.nern.antishadowpatch.AntiShadowPatch;
 public class BlockEntityMixin {
     @Inject(method = "supports", at = @At("HEAD"), cancellable = true)
     private void antishadowpatch$bringBackSwappedBlockEntitiesExistence(BlockState state, CallbackInfoReturnable<Boolean> cir) {
-        if(AntiShadowPatch.config().Block_Entities.bringBackBlocksWithSwappedBlockEntities) {
+        if(AntiShadowPatch.config().Block_Entities.BringBackBlocksWithSwappedBlockEntities) {
             cir.setReturnValue(true);
         }
     }

@@ -21,7 +21,7 @@ public class ComparatorBlockMixin
             at = @At(value = "RETURN", ordinal = 0)
     )
     private BlockState antishadowpatch$bringBackFloatingComparatorOnTrapdoor(BlockState original, BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
-        return AntiShadowPatch.config().Blocks.bringBackFloatingRedstoneComponentsOnTopOfTrapdoor ? state : original;
+        return AntiShadowPatch.config().Blocks.BringBackFloatingRedstoneComponentsOnTopOfTrapdoor ? state : original;
     }
 
 }

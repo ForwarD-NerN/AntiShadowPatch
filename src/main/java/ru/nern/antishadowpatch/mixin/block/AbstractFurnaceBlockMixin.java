@@ -26,12 +26,12 @@ public abstract class AbstractFurnaceBlockMixin extends BlockWithEntity {
             at = @At(value = "INVOKE", target = "Lnet/minecraft/block/BlockWithEntity;onStateReplaced(Lnet/minecraft/block/BlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/BlockState;Z)V")
     )
     private boolean antishadowpatch$bringBackFurnaceXPDupe(BlockWithEntity block, BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
-        return !AntiShadowPatch.config().Blocks.bringBackFurnaceXPDupe;
+        return !AntiShadowPatch.config().Blocks.BringBackFurnaceXPDupe;
     }
 
     @Inject(method = "onStateReplaced", at = @At("TAIL"))
     private void antishadowpatch$moveStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved, CallbackInfo ci) {
-        if(AntiShadowPatch.config().Blocks.bringBackFurnaceXPDupe) {
+        if(AntiShadowPatch.config().Blocks.BringBackFurnaceXPDupe) {
             super.onStateReplaced(state, world, pos, newState, moved);
         }
     }

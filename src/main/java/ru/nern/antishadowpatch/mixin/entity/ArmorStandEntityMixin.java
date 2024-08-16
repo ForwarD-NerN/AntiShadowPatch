@@ -21,7 +21,7 @@ public class ArmorStandEntityMixin {
             at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/damage/DamageSource;isIn(Lnet/minecraft/registry/tag/TagKey;)Z", ordinal = 4)
     )
     private boolean antishadowpatch$bringBackWitherInvulnerableArmorStands(DamageSource source, TagKey<DamageType> tag, Operation<Boolean> original) {
-        return AntiShadowPatch.config().Entities.bringBackArmorStandInvulnerableToWitherDamage ? "player".equals(source.getName()) : original.call(source, tag);
+        return AntiShadowPatch.config().Entities.BringBackArmorStandInvulnerableToWitherDamage ? "player".equals(source.getName()) : original.call(source, tag);
     }
 
     @WrapOperation(
@@ -29,12 +29,12 @@ public class ArmorStandEntityMixin {
             at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/damage/DamageSource;isIn(Lnet/minecraft/registry/tag/TagKey;)Z", ordinal = 5)
     )
     private boolean antishadowpatch$bringBackWitherInvulnerableArmorStands2(DamageSource source, TagKey<DamageType> tag, Operation<Boolean> original) {
-        return AntiShadowPatch.config().Entities.bringBackArmorStandInvulnerableToWitherDamage ? source.getSource() instanceof PersistentProjectileEntity : original.call(source, tag);
+        return AntiShadowPatch.config().Entities.BringBackArmorStandInvulnerableToWitherDamage ? source.getSource() instanceof PersistentProjectileEntity : original.call(source, tag);
     }
 
     @Inject(method = "damage", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/decoration/ArmorStandEntity;kill()V", ordinal = 2, shift = At.Shift.AFTER), cancellable = true)
     private void antishadowpatch$bringBackWitherInvulnerableArmorStands3(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
-        if(AntiShadowPatch.config().Entities.bringBackArmorStandInvulnerableToWitherDamage)
+        if(AntiShadowPatch.config().Entities.BringBackArmorStandInvulnerableToWitherDamage)
             cir.setReturnValue(source.getSource() instanceof PersistentProjectileEntity projectile && projectile.getPierceLevel() > 0);
     }
 }

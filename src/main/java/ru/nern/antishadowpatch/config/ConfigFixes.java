@@ -2,9 +2,9 @@ package ru.nern.antishadowpatch.config;
 
 import com.google.gson.JsonObject;
 import ru.nern.antishadowpatch.AntiShadowPatch;
-import ru.nern.fconfiglib.v1.config.ConfigFixer;
+import ru.nern.fconfiglib.v1.ConfigFixer;
 
-import static ru.nern.fconfiglib.v1.config.json.JsonConfigUtils.*;
+import static ru.nern.fconfiglib.v1.json.JsonConfigUtils.*;
 
 public class ConfigFixes {
 
@@ -20,21 +20,21 @@ public class ConfigFixes {
             createPath(raw, "Entities");
             createPath(raw, "Misc");
 
-            move(raw, "blocks.bringBackStackOverflowSuppression", "Block_Updates.bringBackSOSuppression");
-            move(raw, "blocks.bringBackCCESuppression", "Block_Updates");
-            move(raw, "blocks.bringBackFloatingRedstoneComponentsOnTopOfTrapdoor", "Blocks.bringBackFloatingRedstoneComponentsOnTopOfTrapdoor");
-            move(raw, "blocks.bringBackTrapdoorUpdateSkipping", "Block_Updates");
-            move(raw, "entities.bringBackInfiniteFurnaceXPBug", "Blocks.bringBackFurnaceXPDupe");
-            move(raw, "entities.bringBackOldDragonFreezing", "Entities.bringBackOldDragonFreezing");
-            move(raw, "entities.bringBackShadowItemsInMobInventory", "Entities.bringBackShadowItemsInMobInventory");
-            move(raw, "blocks.bringBackBlockEntitySwap", "Block_Entities.bringBackBlockEntitySwap");
-            move(raw, "blocks.bringBackSwappedBlockEntitiesExistence", "Block_Entities.bringBackBlocksWithSwappedBlockEntities");
-            move(raw, "items.bringBack1_17ItemShadowing", "Items.bringBackItemShadowing_1_17");
-            move(raw, "items.bringBack1_18ItemShadowing", "Items.bringBackItemShadowing_1_18");
-            move(raw, "blocks.bringBackChunkSaveState", "World.bringBackChunkSaveState_1_14");
-            move(raw, "misc.bringBackWitherInvulnerableArmorStands", "Entities.bringBackArmorStandInvulnerableToWitherDamage");
-            move(raw, "blocks.bringBackGracefulOOMHandling", "Misc.bringBackGracefulOOMHandling");
-            move(raw, "blocks.gracefulStackOverflowHandling", "Misc.bringBackGracefulSOHandling");
+            move(raw, "blocks.bringBackStackOverflowSuppression", "Block_Updates.BringBackSOSuppression");
+            move(raw, "blocks.bringBackCCESuppression", "Block_Updates.BringBackCCESuppression");
+            move(raw, "blocks.bringBackFloatingRedstoneComponentsOnTopOfTrapdoor", "Blocks.BringBackFloatingRedstoneComponentsOnTopOfTrapdoor");
+            move(raw, "blocks.bringBackTrapdoorUpdateSkipping", "Block_Updates.BringBackTrapdoorUpdateSkipping");
+            move(raw, "entities.bringBackInfiniteFurnaceXPBug", "Blocks.BringBackFurnaceXPDupe");
+            move(raw, "entities.bringBackOldDragonFreezing", "Entities.BringBackOldDragonFreezing");
+            move(raw, "entities.bringBackShadowItemsInMobInventory", "Entities.BringBackShadowItemsInMobInventory");
+            move(raw, "blocks.bringBackBlockEntitySwap", "Block_Entities.BringBackBlockEntitySwap");
+            move(raw, "blocks.bringBackSwappedBlockEntitiesExistence", "Block_Entities.BringBackBlocksWithSwappedBlockEntities");
+            move(raw, "items.bringBack1_17ItemShadowing", "Items.BringBackItemShadowing_1_17");
+            move(raw, "items.bringBack1_18ItemShadowing", "Items.BringBackItemShadowing_1_18");
+            move(raw, "blocks.bringBackChunkSaveState", "World.BringBackChunkSaveState_1_14");
+            move(raw, "misc.bringBackWitherInvulnerableArmorStands", "Entities.BringBackArmorStandInvulnerableToWitherDamage");
+            move(raw, "blocks.bringBackGracefulOOMHandling", "Misc.BringBackGracefulOOMHandling");
+            move(raw, "blocks.gracefulStackOverflowHandling", "Misc.BringBackGracefulSOHandling");
             AntiShadowPatch.LOGGER.info("Conversion completed");
         }
     };

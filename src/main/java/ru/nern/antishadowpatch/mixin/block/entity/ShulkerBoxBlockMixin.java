@@ -27,12 +27,12 @@ public abstract class ShulkerBoxBlockMixin extends BlockWithEntity {
             at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;updateComparators(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/Block;)V")
     )
     private boolean antishadowpatch$disableComparatorUpdateAfter(World world, BlockPos pos, Block block) {
-        return !AntiShadowPatch.config().Block_Entities.bringBackBlockEntitySwap;
+        return !AntiShadowPatch.config().Block_Entities.BringBackBlockEntitySwap;
     }
 
     @Inject(method = "onStateReplaced", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/BlockWithEntity;onStateReplaced(Lnet/minecraft/block/BlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/BlockState;Z)V"), locals = LocalCapture.CAPTURE_FAILHARD)
     private void antishadowpatch$moveComparatorUpdateBefore(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved, CallbackInfo ci, BlockEntity blockEntity) {
-        if(AntiShadowPatch.config().Block_Entities.bringBackBlockEntitySwap && blockEntity instanceof ShulkerBoxBlockEntity) {
+        if(AntiShadowPatch.config().Block_Entities.BringBackBlockEntitySwap && blockEntity instanceof ShulkerBoxBlockEntity) {
             world.updateComparators(pos, state.getBlock());
         }
     }

@@ -31,12 +31,12 @@ public abstract class ScreenHandlerMixin {
     )
     private boolean antishadowpatch$cancel117ItemShadowingPatch(PlayerInventory inventory, int button, ItemStack stack)
     {
-        return !AntiShadowPatch.config().Items.bringBackItemShadowing_1_17;
+        return !AntiShadowPatch.config().Items.BringBackItemShadowing_1_17;
     }
 
     @Inject(method = "internalOnSlotClick", at = @At(value = "INVOKE", target = "Lnet/minecraft/screen/slot/Slot;setStack(Lnet/minecraft/item/ItemStack;)V", ordinal = 4, shift = At.Shift.AFTER))
     private void antishadowpatch$bringBack117ItemShadowing(int slotIndex, int button, SlotActionType actionType, PlayerEntity player, CallbackInfo ci) {
-        if(AntiShadowPatch.config().Items.bringBackItemShadowing_1_17)
+        if(AntiShadowPatch.config().Items.BringBackItemShadowing_1_17)
         {
             player.getInventory().setStack(button, ItemStack.EMPTY);
         }
@@ -49,12 +49,12 @@ public abstract class ScreenHandlerMixin {
     )
     private boolean antishadowpatch$cancel118ItemShadowingPatch(Slot slot, ItemStack stack)
     {
-        return !AntiShadowPatch.config().Items.bringBackItemShadowing_1_18;
+        return !AntiShadowPatch.config().Items.BringBackItemShadowing_1_18;
     }
 
     @Inject(method = "internalOnSlotClick", at = @At(value = "INVOKE", target = "Lnet/minecraft/screen/ScreenHandler;setCursorStack(Lnet/minecraft/item/ItemStack;)V", ordinal = 4))
     private void antishadowpatch$bringBack118ItemShadowing(int slotIndex, int button, SlotActionType actionType, PlayerEntity player, CallbackInfo ci) {
-        if(AntiShadowPatch.config().Items.bringBackItemShadowing_1_18)
+        if(AntiShadowPatch.config().Items.BringBackItemShadowing_1_18)
         {
             slots.get(slotIndex).setStack(getCursorStack());
         }

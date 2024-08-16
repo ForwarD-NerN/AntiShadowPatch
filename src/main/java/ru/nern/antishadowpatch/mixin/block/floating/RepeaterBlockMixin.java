@@ -18,6 +18,6 @@ public class RepeaterBlockMixin {
             at = @At(value = "RETURN", ordinal = 0)
     )
     private BlockState antishadowpatch$bringBackFloatingRepeaterOnTrapdoor(BlockState original, BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
-        return AntiShadowPatch.config().Blocks.bringBackFloatingRedstoneComponentsOnTopOfTrapdoor ? state : original;
+        return AntiShadowPatch.config().Blocks.BringBackFloatingRedstoneComponentsOnTopOfTrapdoor ? state : original;
     }
 }

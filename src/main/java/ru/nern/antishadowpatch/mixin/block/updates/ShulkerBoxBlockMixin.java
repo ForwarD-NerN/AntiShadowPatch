@@ -20,7 +20,7 @@ public class ShulkerBoxBlockMixin
 	)
 	private int antishadowpatch$bringBackCCESuppression(BlockEntity blockEntity, Operation<Integer> original)
 	{
-		return AntiShadowPatch.config().Block_Updates.bringBackCCESuppression ?
+		return AntiShadowPatch.config().Block_Updates.BringBackCCESuppression ?
 				ScreenHandler.calculateComparatorOutput((Inventory) blockEntity) : original.call(blockEntity);
 	}
 }
