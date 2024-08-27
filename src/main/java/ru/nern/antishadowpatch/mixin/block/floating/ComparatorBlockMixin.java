@@ -8,12 +8,10 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.world.WorldAccess;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
-import ru.nern.antishadowpatch.AntiShadowPatch;
 
 
 @Mixin(ComparatorBlock.class)
-public class ComparatorBlockMixin
-{
+public class ComparatorBlockMixin {
 
     //Brings back floating comparator
     @ModifyReturnValue(
@@ -21,7 +19,7 @@ public class ComparatorBlockMixin
             at = @At(value = "RETURN", ordinal = 0)
     )
     private BlockState antishadowpatch$bringBackFloatingComparatorOnTrapdoor(BlockState original, BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
-        return AntiShadowPatch.config().Blocks.BringBackFloatingRedstoneComponentsOnTopOfTrapdoor ? state : original;
+        return state;
     }
 
 }

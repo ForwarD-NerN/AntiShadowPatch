@@ -8,18 +8,15 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.world.WorldAccess;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
-import ru.nern.antishadowpatch.AntiShadowPatch;
 
 //Brings back floating redstone dust
 @Mixin(RedstoneWireBlock.class)
-public class RedstoneWireBlockMixin
-{
-
+public class RedstoneWireBlockMixin {
     @ModifyReturnValue(
             method = "getStateForNeighborUpdate",
             at = @At(value = "RETURN", ordinal = 0)
     )
     private BlockState antishadowpatch$bringBackFloatingRedstoneOnTrapdoor(BlockState original, BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
-        return AntiShadowPatch.config().Blocks.BringBackFloatingRedstoneComponentsOnTopOfTrapdoor ? state : original;
+        return state;
     }
 }

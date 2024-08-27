@@ -11,17 +11,15 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import ru.nern.antishadowpatch.AntiShadowPatch;
 
 
 @Mixin(EnderDragonEntity.class)
 public class EnderDragonEntityMixin {
-
     @Shadow private @Nullable EnderDragonFight fight;
 
     @Inject(method = "<init>", at = @At("TAIL"))
     private void antishadowpatch$bringBackOldDragonFreezing(EntityType<? extends EnderDragonEntity> entityType, World world, CallbackInfo ci) {
-        if(AntiShadowPatch.config().Entities.BringBackOldDragonFreezing) this.fight = world instanceof ServerWorld ? ((ServerWorld)world).getEnderDragonFight() : null;
+        this.fight = world instanceof ServerWorld ? ((ServerWorld) world).getEnderDragonFight() : null;
     }
 
 }

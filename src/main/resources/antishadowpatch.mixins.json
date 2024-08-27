@@ -6,26 +6,28 @@
   "mixins": [
     "block.AbstractFurnaceBlockMixin",
     "block.entity.BlockEntityMixin",
-    "block.entity.ChiseledBookShelfBlockMixin",
-    "block.entity.LecternBlockMixin",
-    "block.entity.SculkSensorBlockMixin",
-    "block.entity.ShulkerBoxBlockMixin",
+    "block.entity.obtain.ChiseledBookShelfBlockMixin",
+    "block.entity.obtain.LecternBlockMixin",
+    "block.entity.obtain.SculkSensorBlockMixin",
+    "block.entity.obtain.ShulkerBoxBlockMixin",
     "block.floating.ComparatorBlockMixin",
     "block.floating.RedstoneWireBlockMixin",
     "block.floating.RepeaterBlockMixin",
-    "block.updates.NetworkThreadUtilsMixin",
-    "block.updates.RedstoneWireBlockMixin",
-    "block.updates.ShulkerBoxBlockMixin",
-    "block.updates.SimpleNeighborUpdaterMixin",
-    "block.updates.SystemDetailsMixin",
-    "block.updates.WorldMixin",
+    "misc.NetworkThreadUtilsMixin",
+    "block.update.RedstoneWireBlockMixin",
+    "block.update.ShulkerBoxBlockMixin",
+    "block.update.SimpleNeighborUpdaterMixin",
+    "misc.SystemDetailsMixin",
+    "block.update.WorldMixin",
     "entity.ArmorStandEntityMixin",
     "entity.EnderDragonEntityMixin",
     "entity.MobEntityMixin",
-    "item.ScreenHandlerMixin",
+    "item.ScreenHandlerMixin_1_17",
+    "item.ScreenHandlerMixin_1_18",
     "world.RegionFileMixin"
   ],
   "injectors": {
     "defaultRequire": 1
-  }
+  },
+  "plugin": "ru.nern.antishadowpatch.mixin.ASPMixinPlugin"
 }
