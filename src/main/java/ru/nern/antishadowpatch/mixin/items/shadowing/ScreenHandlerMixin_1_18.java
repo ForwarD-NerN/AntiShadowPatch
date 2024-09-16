@@ -1,4 +1,4 @@
-package ru.nern.antishadowpatch.mixin.item;
+package ru.nern.antishadowpatch.mixin.items.shadowing;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;

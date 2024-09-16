@@ -27,7 +27,7 @@ public class ConfigFixes {
         move(raw, "entities.bringBackOldDragonFreezing", "Entities.BringBackOldDragonFreezing");
         move(raw, "entities.bringBackShadowItemsInMobInventory", "Entities.BringBackShadowItemsInMobInventory");
         move(raw, "blocks.bringBackBlockEntitySwap", "Block_Entities.BringBackBlockEntitySwap");
-        move(raw, "blocks.bringBackSwappedBlockEntitiesExistence", "Block_Entities.BringBackBlocksWithSwappedBlockEntities");
+        move(raw, "blocks.bringBackSwappedBlockEntitiesExistence", "Block_Entities.KeepBlocksWithSwappedBlockEntities");
         move(raw, "items.bringBack1_17ItemShadowing", "Items.BringBackItemShadowing_1_17");
         move(raw, "items.bringBack1_18ItemShadowing", "Items.BringBackItemShadowing_1_18");
         move(raw, "blocks.bringBackChunkSaveState", "World.BringBackChunkSaveState_1_14");

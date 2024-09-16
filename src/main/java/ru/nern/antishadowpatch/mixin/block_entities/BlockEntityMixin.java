@@ -1,4 +1,4 @@
-package ru.nern.antishadowpatch.mixin.block.entity;
+package ru.nern.antishadowpatch.mixin.block_entities;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;

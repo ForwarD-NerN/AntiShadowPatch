@@ -1,4 +1,4 @@
-package ru.nern.antishadowpatch.mixin.block;
+package ru.nern.antishadowpatch.mixin.blocks;
 
 import net.minecraft.block.AbstractFurnaceBlock;
 import net.minecraft.block.BlockState;

@@ -1,4 +1,4 @@
-package ru.nern.antishadowpatch.mixin.entity;
+package ru.nern.antishadowpatch.mixin.entities;
 
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.damage.DamageType;

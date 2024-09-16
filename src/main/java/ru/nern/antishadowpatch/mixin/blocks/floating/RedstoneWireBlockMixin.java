@@ -1,4 +1,4 @@
-package ru.nern.antishadowpatch.mixin.block.floating;
+package ru.nern.antishadowpatch.mixin.blocks.floating;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import net.minecraft.block.BlockState;

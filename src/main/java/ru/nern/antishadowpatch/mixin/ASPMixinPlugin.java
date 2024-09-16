@@ -17,7 +17,6 @@ public class ASPMixinPlugin implements IMixinConfigPlugin {
         AntiShadowPatch.configManager.init();
         this.helper = new MixinConfigHelper(mixinPackage)
                 .init(AntiShadowPatch.configManager);
-
     }
 
     @Override
@@ -27,6 +26,7 @@ public class ASPMixinPlugin implements IMixinConfigPlugin {
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
+        //AntiShadowPatch.LOGGER.info("Mixin: {}. Should be applied: {}", mixinClassName, this.helper.shouldApplyMixin(mixinClassName));
         return this.helper.shouldApplyMixin(mixinClassName);
     }
 

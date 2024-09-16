@@ -17,7 +17,8 @@ public class AntiShadowPatch implements ModInitializer {
 	public static ConfigManager<Config, JsonObject> configManager = JsonConfigManager
 			.builderOf(Config.class)
 			.modId("antishadowpatch")
-			.fixers((fixerMap) -> fixerMap.put(2, ConfigFixes.V2_FIXER))
+			.fixers((fixers) ->
+					fixers.put(2, ConfigFixes.V2_FIXER))
 			.logger(Sl4jLoggerWrapper.createFrom(LOGGER))
 			.version(CONFIG_VERSION).create();
 
@@ -38,37 +39,37 @@ public class AntiShadowPatch implements ModInitializer {
 		public Misc Misc = new Misc();
 
 		public static class BlockUpdates {
-			@MixinOption({"block.update.WorldMixin", "block.update.SimpleNeighborUpdaterMixin"})
+			@MixinOption({"block_updates.WorldMixin", "block_updates.SimpleNeighborUpdaterMixin"})
 			public boolean BringBackSOSuppression = true;
 
-			@MixinOption("block.update.ShulkerBoxBlockMixin")
+			@MixinOption("block_updates.ShulkerBoxBlockMixin")
 			public boolean BringBackCCESuppression = true;
 
-			@MixinOption("block.update.RedstoneWireBlockMixin")
+			@MixinOption("block_updates.RedstoneWireBlockMixin")
 			public boolean BringBackTrapdoorUpdateSkipping = true;
 		}
 
 		public static class Blocks {
-			@MixinOption("block.floating.*")
+			@MixinOption("blocks.floating.*")
 			public boolean BringBackFloatingRedstoneComponentsOnTopOfTrapdoor = true;
 
-			@MixinOption("block.AbstractFurnaceBlockMixin")
+			@MixinOption("blocks.AbstractFurnaceBlockMixin")
 			public boolean BringBackFurnaceXPDupe = true;
 		}
 
 		public static class BlockEntities {
-			@MixinOption("block.entity.BlockEntityMixin")
+			@MixinOption("block_entities.obtain.*")
 			public boolean BringBackBlockEntitySwap = true;
 
-			@MixinOption("block.entity.obtain.*")
-			public boolean BringBackBlocksWithSwappedBlockEntities = true;
+			@MixinOption("block_entities.BlockEntityMixin")
+			public boolean KeepBlocksWithSwappedBlockEntities = true;
 		}
 
 		public static class Items {
-			@MixinOption("item.ScreenHandlerMixin_1_17")
+			@MixinOption("items.shadowing.ScreenHandlerMixin_1_17")
 			public boolean BringBackItemShadowing_1_17 = true;
 
-			@MixinOption("item.ScreenHandlerMixin_1_18")
+			@MixinOption("items.shadowing.ScreenHandlerMixin_1_18")
 			public boolean BringBackItemShadowing_1_18 = true;
 		}
 
@@ -78,13 +79,13 @@ public class AntiShadowPatch implements ModInitializer {
 		}
 
 		public static class Entities {
-			@MixinOption("entity.EnderDragonEntityMixin")
+			@MixinOption("entities.EnderDragonEntityMixin")
 			public boolean BringBackOldDragonFreezing = true;
 
-			@MixinOption("entity.ArmorStandEntityMixin")
+			@MixinOption("entities.ArmorStandEntityMixin")
 			public boolean BringBackArmorStandInvulnerableToWitherDamage = true;
 
-			@MixinOption("entity.MobEntityMixin")
+			@MixinOption("entities.MobEntityMixin")
 			public boolean BringBackShadowItemsInMobInventory = true;
 		}
 
@@ -92,7 +93,7 @@ public class AntiShadowPatch implements ModInitializer {
 			@MixinOption("misc.SystemDetailsMixin")
 			public boolean BringBackGracefulSOHandling = true;
 
-			@MixinOption("misc.NetworkThreadUtils")
+			@MixinOption("misc.NetworkThreadUtilsMixin")
 			public boolean BringBackGracefulOOMHandling = true;
 		}
 	}

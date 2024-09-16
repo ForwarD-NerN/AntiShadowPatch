@@ -1,4 +1,4 @@
-package ru.nern.antishadowpatch.mixin.entity;
+package ru.nern.antishadowpatch.mixin.entities;
 
 import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.entity.EquipmentSlot;

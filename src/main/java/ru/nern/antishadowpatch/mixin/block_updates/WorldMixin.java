@@ -1,4 +1,4 @@
-package ru.nern.antishadowpatch.mixin.block.update;
+package ru.nern.antishadowpatch.mixin.block_updates;
 
 import net.minecraft.world.World;
 import net.minecraft.world.block.NeighborUpdater;
