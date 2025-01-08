@@ -7,8 +7,10 @@ import org.slf4j.LoggerFactory;
 import ru.nern.antishadowpatch.config.ConfigFixes;
 import ru.nern.fconfiglib.v1.ConfigManager;
 import ru.nern.fconfiglib.v1.api.annotations.mixins.MixinOption;
+import ru.nern.fconfiglib.v1.api.annotations.validation.ConfigValidators;
 import ru.nern.fconfiglib.v1.json.JsonConfigManager;
 import ru.nern.fconfiglib.v1.log.Sl4jLoggerWrapper;
+import ru.nern.fconfiglib.v1.validation.VersionConfigValidator;
 
 public class AntiShadowPatch implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger("antishadowpatch");
@@ -29,6 +31,9 @@ public class AntiShadowPatch implements ModInitializer {
 		return configManager.config();
 	}
 
+	@ConfigValidators({
+			VersionConfigValidator.class,
+	})
 	public static class Config {
 		public BlockUpdates Block_Updates = new BlockUpdates();
 		public Blocks Blocks = new Blocks();
@@ -76,6 +81,9 @@ public class AntiShadowPatch implements ModInitializer {
 		public static class World {
 			@MixinOption("world.RegionFileMixin")
 			public boolean BringBackChunkSaveState_1_14 = false;
+
+			@MixinOption("network.BookUpdateC2SPacketMixin")
+			public boolean BringBackChunkSaveState_1_21 = false;
 		}
 
 		public static class Entities {
@@ -87,14 +95,18 @@ public class AntiShadowPatch implements ModInitializer {
 
 			@MixinOption("entities.MobEntityMixin")
 			public boolean BringBackShadowItemsInMobInventory = true;
+
+			@MixinOption("entities.MerchantEntityMixin")
+			public boolean BringBackVoidlessVoidTrading = true;
 		}
 
 		public static class Misc {
 			@MixinOption("misc.SystemDetailsMixin")
 			public boolean BringBackGracefulSOHandling = true;
 
-			@MixinOption("misc.NetworkThreadUtilsMixin")
+			@MixinOption("network.NetworkThreadUtilsMixin")
 			public boolean BringBackGracefulOOMHandling = true;
 		}
 	}
+
 }

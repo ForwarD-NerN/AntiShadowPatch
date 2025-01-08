@@ -5,6 +5,7 @@ import net.minecraft.entity.damage.DamageType;
 import net.minecraft.entity.decoration.ArmorStandEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.registry.tag.TagKey;
+import net.minecraft.server.world.ServerWorld;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -30,8 +31,8 @@ public class ArmorStandEntityMixin {
         return source.getSource() instanceof PersistentProjectileEntity;
     }
 
-    @Inject(method = "damage", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/decoration/ArmorStandEntity;kill()V", ordinal = 2, shift = At.Shift.AFTER), cancellable = true)
-    private void antishadowpatch$bringBackWitherInvulnerableArmorStands3(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
+    @Inject(method = "damage", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/decoration/ArmorStandEntity;kill(Lnet/minecraft/server/world/ServerWorld;)V", ordinal = 2, shift = At.Shift.AFTER), cancellable = true)
+    private void antishadowpatch$bringBackWitherInvulnerableArmorStands3(ServerWorld world, DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
         cir.setReturnValue(source.getSource() instanceof PersistentProjectileEntity projectile && projectile.getPierceLevel() > 0);
     }
 }

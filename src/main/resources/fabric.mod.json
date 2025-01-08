@@ -25,10 +25,10 @@
   ],
 
   "depends": {
-    "fabricloader": ">=0.15.11",
-    "minecraft": ">1.21",
+    "fabricloader": ">=0.16.0",
+    "minecraft": ">=1.21.4",
     "java": ">=21",
-    "fconfiglib": ">=1.0.0"
+    "fconfiglib": ">=1.1.1"
   },
   "suggests": {
     "another-mod": "*"

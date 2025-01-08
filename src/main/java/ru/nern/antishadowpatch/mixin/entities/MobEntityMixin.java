@@ -5,6 +5,7 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.server.world.ServerWorld;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
@@ -12,8 +13,8 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(MobEntity.class)
 public class MobEntityMixin {
-    @ModifyArg(method = "loot", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/mob/MobEntity;tryEquip(Lnet/minecraft/item/ItemStack;)Lnet/minecraft/item/ItemStack;"), index = 0)
-    private ItemStack antishadowpatch$bringBackShadowItemsInMobInventory(ItemStack copiedStack, @Local(argsOnly = true) ItemEntity itemEntity) {
+    @ModifyArg(method = "loot", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/mob/MobEntity;tryEquip(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/item/ItemStack;)Lnet/minecraft/item/ItemStack;"), index = 1)
+    private ItemStack antishadowpatch$bringBackShadowItemsInMobInventory(ServerWorld world, ItemStack copiedStack, @Local(argsOnly = true) ItemEntity itemEntity) {
         return itemEntity.getStack();
     }
 
