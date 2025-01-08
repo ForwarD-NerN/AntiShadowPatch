@@ -4,7 +4,7 @@
 
 **AntiShadowPatch** is a mod that aims to reimplement bugs that Mojang patched without any mention in the changelogs(shadow patched).
 
-The extra features that won't be included in this mod will be included in [NotSoShadowExtras](https://modrinth.com/mod/notsoshadowextras) (like **updateSuppressionCrashFix** and
+Extra features that won't be included in this mod will be included in [NotSoShadowExtras](https://modrinth.com/mod/notsoshadowextras) (like **updateSuppressionCrashFix** and
 **disableLightRecalculation**)
 
 ## The list of features(as of 1.0.9)
@@ -21,6 +21,8 @@ The extra features that won't be included in this mod will be included in [NotSo
 * Floating Redstone Components On Top Of Trapdoor **(patched in 23w35a)**
 * [Old Dragon Freezing](https://www.youtube.com/watch?v=kxHpyV95rB0) **(changed in 1.20-pre1)**
 * [1.14 Chunk Save State](https://www.youtube.com/watch?v=uw7vEGhKoH8) **(patched in 19w35a)**
-* [Wither Invulnerable Armor Stands](https://www.youtube.com/watch?v=Qjtqd9EjvaA) **(patched in 1.20.2 pre-4)**
+* 1.21 Chunk Save State **(patched in 24w33a)**
+* [Armor Stands Invulnerable to wither damage](https://www.youtube.com/watch?v=Qjtqd9EjvaA) **(patched in 1.20.2 pre-4)**
+* [Voidless Void Trading](https://www.youtube.com/watch?v=t79t8M6ypHI) **(patched in 24w44a)**
 
 You can configure every setting individually in antishadowpatch_config.json
