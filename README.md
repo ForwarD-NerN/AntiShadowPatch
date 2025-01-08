@@ -22,7 +22,7 @@ Extra features that won't be included in this mod will be included in [NotSoShad
 * [Old Dragon Freezing](https://www.youtube.com/watch?v=kxHpyV95rB0) **(changed in 1.20-pre1)**
 * [1.14 Chunk Save State](https://www.youtube.com/watch?v=uw7vEGhKoH8) **(patched in 19w35a)**
 * 1.21 Chunk Save State **(patched in 24w33a)**
-* [Armor Stands Invulnerable to wither damage](https://www.youtube.com/watch?v=Qjtqd9EjvaA) **(patched in 1.20.2 pre-4)**
+* [Armor Stands invulnerable to wither damage](https://www.youtube.com/watch?v=Qjtqd9EjvaA) **(patched in 1.20.2 pre-4)**
 * [Voidless Void Trading](https://www.youtube.com/watch?v=t79t8M6ypHI) **(patched in 24w44a)**
 
 You can configure every setting individually in antishadowpatch_config.json
