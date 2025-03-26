@@ -15,7 +15,7 @@ import ru.nern.fconfiglib.v1.validation.VersionConfigValidator;
 public class AntiShadowPatch implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger("antishadowpatch");
 
-	public static int CONFIG_VERSION = 2;
+	public static int CONFIG_VERSION = 3;
 	public static ConfigManager<Config, JsonObject> configManager = JsonConfigManager
 			.builderOf(Config.class)
 			.modId("antishadowpatch")
@@ -58,8 +58,10 @@ public class AntiShadowPatch implements ModInitializer {
 			@MixinOption("blocks.floating.*")
 			public boolean BringBackFloatingRedstoneComponentsOnTopOfTrapdoor = true;
 
-			@MixinOption("blocks.AbstractFurnaceBlockMixin")
 			public boolean BringBackFurnaceXPDupe = true;
+
+			@MixinOption("blocks.FullBlockCollisionsMixin.*") // https://bugs.mojang.com/browse/MC/issues/MC-295395
+			public boolean BringBackFullBlockInnerCollisions = false;
 		}
 
 		public static class BlockEntities {
