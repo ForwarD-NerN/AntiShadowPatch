@@ -5,6 +5,7 @@ import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
@@ -19,6 +20,7 @@ import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import ru.nern.antishadowpatch.AntiShadowPatch;
 
@@ -57,6 +59,11 @@ public abstract class WorldChunkMixin extends Chunk {
         if(!oldState.isOf(newState.getBlock()) && oldState.hasBlockEntity() && shouldRemoveIfFurnace) {
             removeBlockEntity(pos);
         }
+    }
+
+    @Redirect(method = "setBlockEntity", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/entity/BlockEntityType;supports(Lnet/minecraft/block/BlockState;)Z"))
+    private boolean antishadowpatch$allowSettingUnsupportedBlockEntity(BlockEntityType instance, BlockState state) {
+        return true;
     }
 
 }
