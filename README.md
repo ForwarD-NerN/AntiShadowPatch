@@ -7,7 +7,7 @@
 Extra features that won't be included in this mod will be included in [NotSoShadowExtras](https://modrinth.com/mod/notsoshadowextras) (like **updateSuppressionCrashFix** and
 **disableLightRecalculation**)
 
-## The list of features(as of 2.1.0)
+## The list of features(as of 2.1.1)
 * [StackOverflow Update Suppression](https://www.youtube.com/watch?v=Dtke-Co5HFM) **(patched in 22w11a)**
 * [CCE Update Suppression](https://www.youtube.com/watch?v=f4ty-PZcvrI) **(patched in 23w35a)**
 * [Trapdoor Update Skipping](https://www.youtube.com/watch?v=hZEOyZ3CEXY) **(patched in 1.20-pre2)**

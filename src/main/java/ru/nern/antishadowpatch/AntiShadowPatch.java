@@ -15,12 +15,14 @@ import ru.nern.fconfiglib.v1.validation.VersionConfigValidator;
 public class AntiShadowPatch implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger("antishadowpatch");
 
-	public static int CONFIG_VERSION = 5;
+	public static int CONFIG_VERSION = 6;
 	public static ConfigManager<Config, JsonObject> configManager = JsonConfigManager
 			.builderOf(Config.class)
 			.modId("antishadowpatch")
-			.fixers((fixers) ->
-					fixers.put(2, ConfigFixes.V2_FIXER))
+			.fixers((fixers) -> {
+						fixers.put(2, ConfigFixes.V2_FIXER);
+						fixers.put(6, ConfigFixes.V6_FIXER);
+					})
 			.logger(Sl4jLoggerWrapper.createFrom(LOGGER))
 			.version(CONFIG_VERSION).create();
 
@@ -84,7 +86,7 @@ public class AntiShadowPatch implements ModInitializer {
 			public boolean BringBackCurseBookOverstacking = false;
 
 			@MixinOption("items.overstacking.movement.*")
-			public boolean BringBackOverstackedItemMovement = false;
+			public boolean BringBackOverstackedItemMovement_1_20 = false;
 		}
 
 		public static class World {

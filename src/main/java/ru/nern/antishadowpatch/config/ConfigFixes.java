@@ -36,4 +36,10 @@ public class ConfigFixes {
         move(raw, "blocks.gracefulStackOverflowHandling", "Misc.BringBackGracefulSOHandling");
         AntiShadowPatch.LOGGER.info("Conversion completed");
     };
+
+    public static ConfigFixer<AntiShadowPatch.Config, JsonObject> V6_FIXER = (config, raw) -> {
+        AntiShadowPatch.LOGGER.info("Converting to config V6...");
+        move(raw, "Items.BringBackOverstackedItemMovement", "Items.BringBackOverstackedItemMovement_1_20");
+        AntiShadowPatch.LOGGER.info("Conversion completed");
+    };
 }
