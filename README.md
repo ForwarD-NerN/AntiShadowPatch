@@ -24,6 +24,7 @@ Extra features that won't be included in this mod will be included in [NotSoShad
 * 1.21 Chunk Save State **(patched in 24w33a)**
 * [Armor Stands invulnerable to wither damage](https://www.youtube.com/watch?v=Qjtqd9EjvaA) **(patched in 1.20.2 pre-4)**
 * [Voidless Void Trading](https://www.youtube.com/watch?v=t79t8M6ypHI) **(patched in 24w44a)**
-* [Old Inner Collisions Of Some Blocks](https://bugs.mojang.com/browse/MC/issues/MC-295395) **(changed in 25w04a)**
+* [Overstacking of curse books](https://bugs.mojang.com/browse/MC/issues/MC-157133) **(patched in 24w10a)**
+* Overstacked Item Movement **(patched in 24w12a, 24w33a)**
 
 You can configure every setting individually in antishadowpatch_config.json
