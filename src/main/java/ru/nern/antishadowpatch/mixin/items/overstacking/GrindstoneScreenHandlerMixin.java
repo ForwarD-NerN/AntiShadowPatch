@@ -1,4 +1,4 @@
-package ru.nern.antishadowpatch.mixin.items;
+package ru.nern.antishadowpatch.mixin.items.overstacking;
 
 import net.minecraft.item.ItemStack;
 import org.spongepowered.asm.mixin.injection.At;
