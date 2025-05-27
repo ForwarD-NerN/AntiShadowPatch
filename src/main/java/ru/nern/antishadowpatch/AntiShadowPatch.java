@@ -15,7 +15,7 @@ import ru.nern.fconfiglib.v1.validation.VersionConfigValidator;
 public class AntiShadowPatch implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger("antishadowpatch");
 
-	public static int CONFIG_VERSION = 3;
+	public static int CONFIG_VERSION = 4;
 	public static ConfigManager<Config, JsonObject> configManager = JsonConfigManager
 			.builderOf(Config.class)
 			.modId("antishadowpatch")
@@ -61,6 +61,7 @@ public class AntiShadowPatch implements ModInitializer {
 			public boolean BringBackFurnaceXPDupe = true;
 
 			@MixinOption("blocks.FullBlockCollisionsMixin.*") // https://bugs.mojang.com/browse/MC/issues/MC-295395
+			@Deprecated(since = "Mojang reverted this change in 25w16a")
 			public boolean BringBackFullBlockInnerCollisions = false;
 		}
 
@@ -78,6 +79,9 @@ public class AntiShadowPatch implements ModInitializer {
 
 			@MixinOption("items.shadowing.ScreenHandlerMixin_1_18")
 			public boolean BringBackItemShadowing_1_18 = true;
+
+			@MixinOption("items.GrindstoneScreenHandlerMixin")
+			public boolean BringBackCurseBookOverstacking = true;
 		}
 
 		public static class World {

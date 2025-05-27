@@ -21,6 +21,7 @@
     "entities.EnderDragonEntityMixin",
     "entities.MerchantEntityMixin",
     "entities.MobEntityMixin",
+    "items.GrindstoneScreenHandlerMixin",
     "items.shadowing.ScreenHandlerMixin_1_17",
     "items.shadowing.ScreenHandlerMixin_1_18",
     "misc.SystemDetailsMixin",
