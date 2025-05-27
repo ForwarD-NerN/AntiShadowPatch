@@ -23,7 +23,6 @@
     "entities.MobEntityMixin",
     "items.overstacking.GrindstoneScreenHandlerMixin",
     "items.overstacking.movement.ItemStackMixin",
-    "items.overstacking.movement.PlayerInventoryMixin",
     "items.overstacking.movement.ScreenHandlerMixin",
     "items.overstacking.movement.ServerPlayNetworkHandlerMixin",
     "items.overstacking.movement.SlotMixin",
