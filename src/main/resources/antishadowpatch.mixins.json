@@ -27,7 +27,7 @@
     "items.shadowing.ScreenHandlerMixin_1_18",
     "misc.SystemDetailsMixin",
     "network.BookUpdateC2SPacketMixin",
-    "network.NetworkThreadUtilsMixin",
+    "network.PacketApplyBatcherMixin",
     "world.RegionFileMixin"
   ],
   "injectors": {

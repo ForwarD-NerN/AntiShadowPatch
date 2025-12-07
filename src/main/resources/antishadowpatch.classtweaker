@@ -1,0 +1,2 @@
+classTweaker v1 named
+accessible field net/minecraft/world/block/ChainRestrictedNeighborUpdater neighborUpdateCallback Ljava/util/function/Consumer;

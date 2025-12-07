@@ -1,10 +1,10 @@
 package ru.nern.antishadowpatch.mixin.items.overstacking;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.screen.GrindstoneScreenHandler;
+import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
-import net.minecraft.screen.GrindstoneScreenHandler;
-import org.spongepowered.asm.mixin.*;
 
 @Mixin(GrindstoneScreenHandler.class)
 public abstract class GrindstoneScreenHandlerMixin {

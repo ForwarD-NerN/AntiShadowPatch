@@ -20,13 +20,14 @@
       "ru.nern.antishadowpatch.AntiShadowPatch"
     ]
   },
+  "accessWidener" : "antishadowpatch.classtweaker",
   "mixins": [
     "antishadowpatch.mixins.json"
   ],
 
   "depends": {
     "fabricloader": ">=0.16.0",
-    "minecraft": ">=1.21.8",
+    "minecraft": ">=1.21.9",
     "java": ">=21",
     "fconfiglib": ">=1.1.1"
   },
