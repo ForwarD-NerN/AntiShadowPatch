@@ -7,7 +7,7 @@
 Extra features that won't be included in this mod will be included in [NotSoShadowExtras](https://modrinth.com/mod/notsoshadowextras) (like **updateSuppressionCrashFix** and
 **disableLightRecalculation**)
 
-## The list of features(as of 2.1.1)
+## The list of features(as of 2.1.5)
 * [StackOverflow Update Suppression](https://www.youtube.com/watch?v=Dtke-Co5HFM) **(patched in 22w11a)**
 * [CCE Update Suppression](https://www.youtube.com/watch?v=f4ty-PZcvrI) **(patched in 23w35a)**
 * [Trapdoor Update Skipping](https://www.youtube.com/watch?v=hZEOyZ3CEXY) **(patched in 1.20-pre2)**
@@ -20,6 +20,7 @@ Extra features that won't be included in this mod will be included in [NotSoShad
 * [Furnace XP Dupe](https://youtu.be/p5awe_hOp08?si=ptoHr59GWVnVhPdU&t=265) **(patched in 23w35a)**
 * Floating Redstone Components On Top Of Trapdoor **(patched in 23w35a)**
 * [Old Dragon Freezing](https://www.youtube.com/watch?v=kxHpyV95rB0) **(changed in 1.20-pre1)**
+* [Ender Dragon Overworld Transportation](https://www.youtube.com/watch?v=g_-_oSr4l_w) **(patched in 24w21a)**
 * [1.14 Chunk Save State](https://www.youtube.com/watch?v=uw7vEGhKoH8) **(patched in 19w35a)**
 * 1.21 Chunk Save State **(patched in 24w33a)**
 * [Armor Stands invulnerable to wither damage](https://www.youtube.com/watch?v=Qjtqd9EjvaA) **(patched in 1.20.2 pre-4)**
