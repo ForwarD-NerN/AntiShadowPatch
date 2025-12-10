@@ -16,6 +16,7 @@
     "blocks.floating.RepeaterBlockMixin",
     "entities.ArmorStandEntityMixin",
     "entities.EnderDragonEntityMixin",
+    "entities.EntityMixin",
     "entities.MerchantEntityMixin",
     "entities.MobEntityMixin",
     "items.overstacking.GrindstoneScreenHandlerMixin",

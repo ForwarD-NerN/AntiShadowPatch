@@ -15,7 +15,7 @@ import ru.nern.fconfiglib.v1.validation.VersionConfigValidator;
 public class AntiShadowPatch implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger("antishadowpatch");
 
-	public static int CONFIG_VERSION = 7;
+	public static int CONFIG_VERSION = 8;
 	public static ConfigManager<Config, JsonObject> configManager = JsonConfigManager
 			.builderOf(Config.class)
 			.modId("antishadowpatch")
@@ -96,6 +96,9 @@ public class AntiShadowPatch implements ModInitializer {
 		public static class Entities {
 			@MixinOption("entities.EnderDragonEntityMixin")
 			public boolean BringBackOldDragonFreezing = true;
+
+			@MixinOption("entities.EntityMixin")
+			public boolean BringBackEndPortalDragonDupe = true;
 
 			@MixinOption("entities.ArmorStandEntityMixin")
 			public boolean BringBackArmorStandInvulnerableToWitherDamage = true;
