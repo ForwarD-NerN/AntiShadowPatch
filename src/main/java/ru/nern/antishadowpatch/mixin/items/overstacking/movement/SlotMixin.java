@@ -4,8 +4,8 @@ import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Local;
 import com.llamalad7.mixinextras.sugar.ref.LocalIntRef;
-import net.minecraft.item.ItemStack;
-import net.minecraft.screen.slot.Slot;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.inventory.Slot;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -21,14 +21,14 @@ public abstract class SlotMixin {
      * In short, this is needed to make overstacked items able to be overstacked even more by clicking on them with another overstacked item in the cursor slot
      */
     @WrapOperation(
-            method = "insertStack(Lnet/minecraft/item/ItemStack;I)Lnet/minecraft/item/ItemStack;",
+            method = "safeInsert(Lnet/minecraft/world/item/ItemStack;I)Lnet/minecraft/world/item/ItemStack;",
             at = @At(value = "INVOKE", target = "Ljava/lang/Math;min(II)I", ordinal = 1)
     )
     private int antishadowpatch$trickConditionIntoFailing(int a, int b, Operation<Integer> original) {
         return original.call(a, b) + 1028;
     }
 
-    @Inject(method = "insertStack(Lnet/minecraft/item/ItemStack;I)Lnet/minecraft/item/ItemStack;", at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;isEmpty()Z", ordinal = 1), locals = LocalCapture.CAPTURE_FAILHARD)
+    @Inject(method = "safeInsert(Lnet/minecraft/world/item/ItemStack;I)Lnet/minecraft/world/item/ItemStack;", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;isEmpty()Z", ordinal = 1), locals = LocalCapture.CAPTURE_FAILHARD)
     private void antishadowpatch$revertToTheOldValue(ItemStack stack, int count, CallbackInfoReturnable<ItemStack> cir, @Local(ordinal = 1) LocalIntRef i) {
         i.set(i.get() - 1028);
     }

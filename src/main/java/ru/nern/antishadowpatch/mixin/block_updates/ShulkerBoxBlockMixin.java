@@ -2,10 +2,10 @@ package ru.nern.antishadowpatch.mixin.block_updates;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
-import net.minecraft.block.ShulkerBoxBlock;
-import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.inventory.Inventory;
-import net.minecraft.screen.ScreenHandler;
+import net.minecraft.world.level.block.ShulkerBoxBlock;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.Container;
+import net.minecraft.world.inventory.AbstractContainerMenu;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
@@ -14,10 +14,10 @@ import org.spongepowered.asm.mixin.injection.At;
 public class ShulkerBoxBlockMixin
 {
 	@WrapOperation(
-			method = "getComparatorOutput",
-			at = @At(value = "INVOKE", target = "Lnet/minecraft/screen/ScreenHandler;calculateComparatorOutput(Lnet/minecraft/block/entity/BlockEntity;)I")
+			method = "getAnalogOutputSignal",
+			at = @At(value = "INVOKE", target = "Lnet/minecraft/world/inventory/AbstractContainerMenu;getRedstoneSignalFromBlockEntity(Lnet/minecraft/world/level/block/entity/BlockEntity;)I")
 	)
 	private int antishadowpatch$bringBackCCESuppression(BlockEntity blockEntity, Operation<Integer> original) {
-		return ScreenHandler.calculateComparatorOutput((Inventory) blockEntity);
+		return AbstractContainerMenu.getRedstoneSignalFromContainer((Container) blockEntity);
 	}
 }

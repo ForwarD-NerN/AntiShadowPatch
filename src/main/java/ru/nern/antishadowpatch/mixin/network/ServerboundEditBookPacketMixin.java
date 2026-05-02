@@ -1,12 +1,12 @@
 package ru.nern.antishadowpatch.mixin.network;
 
-import net.minecraft.network.packet.c2s.play.BookUpdateC2SPacket;
+import net.minecraft.network.protocol.game.ServerboundEditBookPacket;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
 
-@Mixin(BookUpdateC2SPacket.class)
-public class BookUpdateC2SPacketMixin {
+@Mixin(ServerboundEditBookPacket.class)
+public class ServerboundEditBookPacketMixin {
     @ModifyConstant(method = "<clinit>", constant = @Constant(intValue = 1024, ordinal = 0))
     private static int antishadowpatch$bringOldPageEditLength(int original) {
         return 8192;
