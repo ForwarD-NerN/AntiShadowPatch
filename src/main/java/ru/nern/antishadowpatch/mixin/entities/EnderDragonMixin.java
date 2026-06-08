@@ -18,7 +18,7 @@ public class EnderDragonMixin {
     @Shadow private @Nullable EnderDragonFight dragonFight;
 
     @Inject(method = "<init>", at = @At("TAIL"))
-    private void antishadowpatch$bringBackOldDragonFreezing(EntityType<? extends EnderDragon> entityType, Level level, CallbackInfo ci) {
+    private void antishadowpatch$bringBackOldDragonFreezing(EntityType<? extends EnderDragon> type, Level level, CallbackInfo ci) {
         this.dragonFight = level instanceof ServerLevel ? ((ServerLevel) level).getDragonFight() : null;
     }
 

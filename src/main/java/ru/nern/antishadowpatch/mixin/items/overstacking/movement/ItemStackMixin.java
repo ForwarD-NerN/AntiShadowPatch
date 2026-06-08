@@ -1,6 +1,5 @@
 package ru.nern.antishadowpatch.mixin.items.overstacking.movement;
 
-import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import net.minecraft.core.component.DataComponentHolder;
 import net.minecraft.world.item.ItemInstance;
 import net.minecraft.world.item.ItemStack;
@@ -20,7 +19,7 @@ public abstract class ItemStackMixin implements DataComponentHolder, ItemInstanc
 
     // How dare you Mojang
     @Inject(method = "limitSize", at = @At("HEAD"), cancellable = true)
-    private void antishadowpatch$doNotCapCount(int maxCount, CallbackInfo ci) {
+    private void antishadowpatch$doNotCapCount(int maxStackSize, CallbackInfo ci) {
         ci.cancel();
     }
 

@@ -14,22 +14,22 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 @Mixin(Mob.class)
 public class MobMixin {
     @ModifyArg(method = "pickUpItem", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Mob;equipItemIfPossible(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/world/item/ItemStack;"), index = 1)
-    private ItemStack antishadowpatch$bringBackShadowItemsInMobInventory(ServerLevel world, ItemStack copiedStack, @Local(argsOnly = true) ItemEntity itemEntity) {
-        return itemEntity.getItem();
+    private ItemStack antishadowpatch$bringBackShadowItemsInMobInventory(ServerLevel world, ItemStack copiedStack, @Local(argsOnly = true) ItemEntity entity) {
+        return entity.getItem();
     }
 
     @ModifyArg(method = "equipItemIfPossible", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Mob;setItemSlotAndDropWhenKilled(Lnet/minecraft/world/entity/EquipmentSlot;Lnet/minecraft/world/item/ItemStack;)V"), index = 1)
-    private ItemStack antishadowpatch$bringBackShadowItemsInMobInventory(ItemStack stack, @Local(argsOnly = true) ItemStack origStack) {
-        return origStack;
+    private ItemStack antishadowpatch$bringBackShadowItemsInMobInventory(ItemStack stack, @Local(argsOnly = true) ItemStack itemStack) {
+        return itemStack;
     }
 
     @Redirect(method = "pickUpItem", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;shrink(I)V"))
-    private void antishadowpatch$disableDecrementAndDiscard(ItemStack instance, int amount, @Local(argsOnly = true) ItemEntity item) {
-        item.discard();
+    private void antishadowpatch$disableDecrementAndDiscard(ItemStack instance, int amount, @Local(argsOnly = true) ItemEntity entity) {
+        entity.discard();
     }
 
     @Redirect(method = "equipItemIfPossible", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/EquipmentSlot;limit(Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/world/item/ItemStack;"))
-    private ItemStack antishadowpatch$disableSplit(EquipmentSlot slot, ItemStack stack) {
-        return stack;
+    private ItemStack antishadowpatch$disableSplit(EquipmentSlot slot, ItemStack toEquip) {
+        return toEquip;
     }
 }

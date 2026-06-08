@@ -15,7 +15,7 @@ import ru.nern.fconfiglib.v1.validation.VersionConfigValidator;
 public class AntiShadowPatch implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger("antishadowpatch");
 
-	public static int CONFIG_VERSION = 8;
+	public static int CONFIG_VERSION = 9;
 	public static ConfigManager<Config, JsonObject> configManager = JsonConfigManager
 			.builderOf(Config.class)
 			.modId("antishadowpatch")
@@ -54,6 +54,9 @@ public class AntiShadowPatch implements ModInitializer {
 
 			@MixinOption("block_updates.RedstoneWireBlockMixin")
 			public boolean BringBackTrapdoorUpdateSkipping = true;
+
+			@MixinOption("block_updates.eid.*")
+			public boolean BringBackEntityIDSuppression = true;
 		}
 
 		public static class Blocks {

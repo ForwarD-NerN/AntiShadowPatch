@@ -32,7 +32,7 @@ public class ArmorStandMixin {
     }
 
     @Inject(method = "hurtServer", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/decoration/ArmorStand;kill(Lnet/minecraft/server/level/ServerLevel;)V", ordinal = 2, shift = At.Shift.AFTER), cancellable = true)
-    private void antishadowpatch$bringBackWitherInvulnerableArmorStands3(ServerLevel world, DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
+    private void antishadowpatch$bringBackWitherInvulnerableArmorStands3(ServerLevel level, DamageSource source, float damage, CallbackInfoReturnable<Boolean> cir) {
         cir.setReturnValue(source.getDirectEntity() instanceof AbstractArrow projectile && projectile.getPierceLevel() > 0);
     }
 }

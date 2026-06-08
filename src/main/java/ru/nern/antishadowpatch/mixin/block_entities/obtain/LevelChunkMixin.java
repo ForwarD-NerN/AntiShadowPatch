@@ -37,8 +37,8 @@ public abstract class LevelChunkMixin extends ChunkAccess {
             method = "setBlockState",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/entity/BlockEntity;preRemoveSideEffects(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V", ordinal = 0)
     )
-    private boolean antishadowpatch$preventUnwantedSideEffects(BlockEntity blockEntity, BlockPos pos, BlockState oldState) {
-        return blockEntity.getType().isValid(oldState);
+    private boolean antishadowpatch$preventUnwantedSideEffects(BlockEntity blockEntity, BlockPos pos, BlockState state) {
+        return blockEntity.getType().isValid(state);
     }
 
 
@@ -52,10 +52,10 @@ public abstract class LevelChunkMixin extends ChunkAccess {
 
 
     @Inject(method = "setBlockState", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;is(Ljava/lang/Object;)Z", ordinal = 1))
-    private void antishadowpatch$moveRemoveBlockEntity(BlockPos pos, BlockState newState, int flags, CallbackInfoReturnable<BlockState> cir, @Local(ordinal = 1) BlockState oldState) {
+    private void antishadowpatch$moveRemoveBlockEntity(BlockPos pos, BlockState state, int flags, CallbackInfoReturnable<BlockState> cir, @Local(ordinal = 1) BlockState oldState) {
         boolean shouldRemoveIfFurnace = AntiShadowPatch.config().Blocks.BringBackFurnaceXPDupe || !oldState.is(Blocks.FURNACE);
 
-        if(!oldState.is(newState.getBlock()) && oldState.hasBlockEntity() && shouldRemoveIfFurnace) {
+        if(!oldState.is(state.getBlock()) && oldState.hasBlockEntity() && shouldRemoveIfFurnace) {
             removeBlockEntity(pos);
         }
     }

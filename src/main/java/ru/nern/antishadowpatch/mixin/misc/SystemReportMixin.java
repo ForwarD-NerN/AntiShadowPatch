@@ -16,7 +16,7 @@ public class SystemReportMixin {
     private void antishadowpatch$gracefulStackOverflowHandling(Logger instance, String s, Object o2, Object o) {
     }
 
-    @ModifyArg(method = "setDetail(Ljava/lang/String;Ljava/util/function/Supplier;)V", at = @At(value = "INVOKE", target = "Lorg/slf4j/Logger;warn(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V"),
+    @ModifyArg(method = "setDetail(Ljava/lang/String;Lnet/minecraft/CrashReportDetail;)V", at = @At(value = "INVOKE", target = "Lorg/slf4j/Logger;warn(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V"),
             index = 2)
     private Object antishadowpatch$gracefulStackOverflowHandling2(Object throwable) {
         return null;

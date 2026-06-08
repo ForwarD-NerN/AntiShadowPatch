@@ -10,6 +10,7 @@ Extra features that won't be included in this mod will be included in [NotSoShad
 ## The list of features(as of 2.1.5)
 * [StackOverflow Update Suppression](https://www.youtube.com/watch?v=Dtke-Co5HFM) **(patched in 22w11a)**
 * [CCE Update Suppression](https://www.youtube.com/watch?v=f4ty-PZcvrI) **(patched in 23w35a)**
+* [Entity ID Suppression](https://www.youtube.com/watch?v=a3RSNDb-IcM) **(patched in 26.2-pre-1)**
 * [Trapdoor Update Skipping](https://www.youtube.com/watch?v=hZEOyZ3CEXY) **(patched in 1.20-pre2)**
 * [Tile Entity(Block Entity) Swap](https://www.youtube.com/watch?v=EpTaffAuVz4) **(patched in 1.21.1-rc1)**
 * Graceful OOM handling **(changed in 23w35a)**

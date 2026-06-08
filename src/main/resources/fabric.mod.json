@@ -27,7 +27,7 @@
 
   "depends": {
     "fabricloader": ">=0.19.0",
-    "minecraft": ">=26.1",
+    "minecraft": ">26.1.2",
     "java": ">=25",
     "fconfiglib": ">=1.1.1"
   },

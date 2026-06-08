@@ -19,7 +19,7 @@ public abstract class AbstractContainerMenuMixin_1_17 {
             method = "doClick",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/player/Inventory;setItem(ILnet/minecraft/world/item/ItemStack;)V", ordinal = 1)
     )
-    private void antishadowpatch$cancel117ItemShadowingPatch(Inventory inventory, int button, ItemStack stack) {}
+    private void antishadowpatch$cancel117ItemShadowingPatch(Inventory inventory, int slot, ItemStack itemStack) {}
 
     @Inject(method = "doClick", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/inventory/Slot;setByPlayer(Lnet/minecraft/world/item/ItemStack;)V", ordinal = 4, shift = At.Shift.AFTER))
     private void antishadowpatch$bringBack117ItemShadowing(int slotIndex, int buttonNum, ContainerInput containerInput, Player player, CallbackInfo ci) {

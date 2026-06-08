@@ -15,7 +15,7 @@ public abstract class LecternBlockEntityMixin {
 
     // In 1.21.5 Mojang removed this method call
     @Inject(method = "preRemoveSideEffects", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;addFreshEntity(Lnet/minecraft/world/entity/Entity;)Z", shift = At.Shift.AFTER))
-    private void antishadowpatch$updateBlockEntity(BlockPos pos, BlockState oldState, CallbackInfo ci) {
+    private void antishadowpatch$updateBlockEntity(BlockPos pos, BlockState state, CallbackInfo ci) {
         clearContent();
     }
 

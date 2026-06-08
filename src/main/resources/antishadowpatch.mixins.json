@@ -11,6 +11,8 @@
     "block_updates.LevelMixin",
     "block_updates.RedStoneWireBlockMixin",
     "block_updates.ShulkerBoxBlockMixin",
+    "block_updates.eid.EntityMixin",
+    "block_updates.eid.ServerLevelMixin",
     "blocks.floating.ComparatorBlockMixin",
     "blocks.floating.RedStoneWireBlockMixin",
     "blocks.floating.RepeaterBlockMixin",

@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class BlockEntityMixin {
 
     @Inject(method = "isValidBlockState", at = @At("HEAD"), cancellable = true)
-    private void antishadowpatch$bringBackSwappedBlockEntitiesExistence(BlockState state, CallbackInfoReturnable<Boolean> cir) {
+    private void antishadowpatch$bringBackSwappedBlockEntitiesExistence(BlockState blockState, CallbackInfoReturnable<Boolean> cir) {
         cir.setReturnValue(true);
     }
 }
