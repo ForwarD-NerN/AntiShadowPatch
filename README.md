@@ -29,4 +29,4 @@ Extra features that won't be included in this mod will be included in [NotSoShad
 * [Overstacking of Curse Books](https://bugs.mojang.com/browse/MC/issues/MC-157133) **(patched in 24w10a)**
 * Overstacked Item Movement **(patched in 24w12a, 24w33a)**
 
-You can configure every setting individually in antishadowpatch_config.json
+By default, everything is enabled, except for potentially dangerous features, such as chunk save states.
