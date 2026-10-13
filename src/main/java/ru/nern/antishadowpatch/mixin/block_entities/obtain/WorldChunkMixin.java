@@ -2,6 +2,8 @@ package ru.nern.antishadowpatch.mixin.block_entities.obtain;
 
 import com.llamalad7.mixinextras.injector.v2.WrapWithCondition;
 import com.llamalad7.mixinextras.sugar.Local;
+import com.llamalad7.mixinextras.sugar.Share;
+import com.llamalad7.mixinextras.sugar.ref.LocalBooleanRef;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
@@ -48,11 +50,19 @@ public abstract class WorldChunkMixin extends Chunk {
         return !AntiShadowPatch.config().Blocks.BringBackFurnaceXPDupe && oldState.isOf(Blocks.FURNACE);
     }
 
+    // In 1.21.9 mojang added a new condition that blocks the block entity from being removed.
+    // So to future-proof instead of duplicating the condition we mark if it had passed and use that in antishadowpatch$moveRemoveBlockEntity()
+    @Inject(method = "setBlockState", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;isClient()Z", ordinal = 0, shift = At.Shift.AFTER))
+    private void antishadowpatch$rememberConditionResult(BlockPos pos, BlockState state, int flags, CallbackInfoReturnable<BlockState> cir, @Share("did_pass") LocalBooleanRef didPass) {
+        didPass.set(true);
+    }
+
     @Inject(method = "setBlockState", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/BlockState;isOf(Lnet/minecraft/block/Block;)Z", ordinal = 1))
-    private void antishadowpatch$moveRemoveBlockEntity(BlockPos pos, BlockState newState, int flags, CallbackInfoReturnable<BlockState> cir, @Local(ordinal = 1) BlockState oldState) {
+    private void antishadowpatch$moveRemoveBlockEntity(BlockPos pos, BlockState newState, int flags, CallbackInfoReturnable<BlockState> cir, @Local(ordinal = 1) BlockState oldState, @Share("did_pass") LocalBooleanRef didPass) {
         boolean shouldRemoveIfFurnace = AntiShadowPatch.config().Blocks.BringBackFurnaceXPDupe || !oldState.isOf(Blocks.FURNACE);
 
-        if(!oldState.isOf(newState.getBlock()) && oldState.hasBlockEntity() && shouldRemoveIfFurnace) {
+        // didPass.get() is false unless antishadowpatch$rememberConditionResult() fired
+        if(didPass.get() && shouldRemoveIfFurnace) {
             removeBlockEntity(pos);
         }
     }
