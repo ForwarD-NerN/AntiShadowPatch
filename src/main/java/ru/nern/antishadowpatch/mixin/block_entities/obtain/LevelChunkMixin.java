@@ -23,7 +23,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import ru.nern.antishadowpatch.AntiShadowPatch;
 
 @Mixin(LevelChunk.class)
-@Debug(export = true)
 public abstract class LevelChunkMixin extends ChunkAccess {
 
 
