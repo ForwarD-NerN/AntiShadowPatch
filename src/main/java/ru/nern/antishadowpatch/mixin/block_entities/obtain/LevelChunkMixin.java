@@ -2,6 +2,8 @@ package ru.nern.antishadowpatch.mixin.block_entities.obtain;
 
 import com.llamalad7.mixinextras.injector.v2.WrapWithCondition;
 import com.llamalad7.mixinextras.sugar.Local;
+import com.llamalad7.mixinextras.sugar.Share;
+import com.llamalad7.mixinextras.sugar.ref.LocalBooleanRef;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -12,6 +14,7 @@ import net.minecraft.world.level.LevelHeightAccessor;
 import net.minecraft.world.level.chunk.*;
 import net.minecraft.world.level.levelgen.blending.BlendingData;
 import org.jspecify.annotations.Nullable;
+import org.spongepowered.asm.mixin.Debug;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -37,8 +40,8 @@ public abstract class LevelChunkMixin extends ChunkAccess {
             method = "setBlockState",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/entity/BlockEntity;preRemoveSideEffects(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V", ordinal = 0)
     )
-    private boolean antishadowpatch$preventUnwantedSideEffects(BlockEntity blockEntity, BlockPos pos, BlockState oldState) {
-        return blockEntity.getType().isValid(oldState);
+    private boolean antishadowpatch$preventUnwantedSideEffects(BlockEntity blockEntity, BlockPos pos, BlockState state) {
+        return blockEntity.getType().isValid(state);
     }
 
 
@@ -50,12 +53,20 @@ public abstract class LevelChunkMixin extends ChunkAccess {
         return !AntiShadowPatch.config().Blocks.BringBackFurnaceXPDupe && oldState.is(Blocks.FURNACE);
     }
 
+    // In 1.21.9 mojang added a new condition that blocks the block entity from being removed.
+    // So to future-proof instead of duplicating the condition we mark if it had passed and use that in antishadowpatch$moveRemoveBlockEntity()
+    @Inject(method = "setBlockState", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;isClientSide()Z", ordinal = 0, shift = At.Shift.AFTER))
+    private void antishadowpatch$rememberConditionResult(BlockPos pos, BlockState state, int flags, CallbackInfoReturnable<BlockState> cir, @Share("did_pass") LocalBooleanRef didPass) {
+        didPass.set(true);
+    }
+
 
     @Inject(method = "setBlockState", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;is(Ljava/lang/Object;)Z", ordinal = 1))
-    private void antishadowpatch$moveRemoveBlockEntity(BlockPos pos, BlockState newState, int flags, CallbackInfoReturnable<BlockState> cir, @Local(ordinal = 1) BlockState oldState) {
+    private void antishadowpatch$moveRemoveBlockEntity(BlockPos pos, BlockState state, int flags, CallbackInfoReturnable<BlockState> cir, @Local(name = "oldState") BlockState oldState, @Share("did_pass") LocalBooleanRef didPass) {
         boolean shouldRemoveIfFurnace = AntiShadowPatch.config().Blocks.BringBackFurnaceXPDupe || !oldState.is(Blocks.FURNACE);
 
-        if(!oldState.is(newState.getBlock()) && oldState.hasBlockEntity() && shouldRemoveIfFurnace) {
+        // didPass.get() is false unless antishadowpatch$rememberConditionResult() fired
+        if(didPass.get() && shouldRemoveIfFurnace) {
             removeBlockEntity(pos);
         }
     }
